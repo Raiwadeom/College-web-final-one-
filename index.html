@@ -1,0 +1,3063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Kisan Shikshan Prasarak Mandal's Chh. Shivajiraje Mahavidyalaya, Udgir</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ========================================
+           ROOT VARIABLES
+           ======================================== */
+        :root {
+            --primary-color: #1a56db;
+            --primary-light: #3b82f6;
+            --primary-dark: #1e3a8a;
+            --secondary-color: #c9a227;
+            --accent-color: #e8b923;
+            --success-color: #10b981;
+            --text-color: #1f2937;
+            --bg-color: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-500: #6b7280;
+            --gray-700: #374151;
+        }
+
+        /* ========================================
+           BASE STYLES
+           ======================================== */
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Marathi Font */
+        body.lang-mr {
+            font-family: 'Noto Sans Devanagari', 'Inter', sans-serif;
+        }
+
+        body.lang-mr .header-title,
+        body.lang-mr .header-subtitle,
+        body.lang-mr h1, 
+        body.lang-mr h2, 
+        body.lang-mr h3, 
+        body.lang-mr h4 {
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+
+        .text-primary { color: var(--primary-color); }
+        .bg-primary { background-color: var(--primary-color); }
+        .bg-secondary { background-color: var(--primary-light); }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
+        }
+
+        /* ========================================
+           LANGUAGE TOGGLE BUTTON
+           ======================================== */
+        .lang-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #1e3a8a 0%, #1a56db 100%);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            box-shadow: 0 8px 25px rgba(26, 86, 219, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .lang-toggle:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(26, 86, 219, 0.5);
+        }
+
+        .lang-toggle:active {
+            transform: translateY(-1px);
+        }
+
+        .lang-toggle svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .lang-toggle .lang-text {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        @media (max-width: 480px) {
+            .lang-toggle {
+                bottom: 15px;
+                right: 15px;
+                padding: 10px 16px;
+                font-size: 0.8125rem;
+            }
+        }
+
+        /* Desktop Language Selector */
+        .lang-selector-desktop {
+            display: none;
+        }
+
+        @media (min-width: 1024px) {
+            .lang-selector-desktop {
+                display: flex;
+                align-items: center;
+                gap: 4px;
+                background: rgba(255, 255, 255, 0.1);
+                padding: 4px;
+                border-radius: 8px;
+                margin-left: 16px;
+            }
+
+            .lang-selector-desktop button {
+                padding: 6px 12px;
+                border-radius: 6px;
+                font-size: 0.8125rem;
+                font-weight: 600;
+                color: rgba(255, 255, 255, 0.7);
+                transition: all 0.2s ease;
+                border: none;
+                background: transparent;
+                cursor: pointer;
+            }
+
+            .lang-selector-desktop button:hover {
+                color: white;
+                background: rgba(255, 255, 255, 0.1);
+            }
+
+            .lang-selector-desktop button.active {
+                background: white;
+                color: var(--primary-color);
+            }
+        }
+
+        /* ========================================
+           NAVBAR STYLES
+           ======================================== */
+        .navbar-modern {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1a56db 100%);
+            box-shadow: 0 4px 20px rgba(26, 86, 219, 0.3);
+        }
+
+        .nav-link-modern {
+            position: relative;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+            padding: 0.5rem 0.75rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            white-space: nowrap;
+            font-size: 0.875rem;
+        }
+
+        @media (min-width: 1024px) {
+            .nav-link-modern {
+                padding: 0.75rem 1rem;
+                font-size: 1rem;
+            }
+        }
+
+        .nav-link-modern:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .nav-link-modern::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%) scaleX(0);
+            width: 80%;
+            height: 2px;
+            background: white;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-link-modern:hover::after {
+            transform: translateX(-50%) scaleX(1);
+        }
+
+        /* Dropdown */
+        .dropdown-modern {
+            position: relative;
+        }
+
+        .dropdown-menu-modern {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 0.5rem;
+            min-width: 200px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 100;
+            overflow: hidden;
+        }
+
+        @media (min-width: 1024px) {
+            .dropdown-menu-modern {
+                min-width: 220px;
+            }
+        }
+
+        .dropdown-modern:hover .dropdown-menu-modern {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu-modern a {
+            display: block;
+            padding: 0.625rem 1rem;
+            color: #4b5563;
+            font-weight: 500;
+            font-size: 0.875rem;
+            transition: all 0.2s ease;
+            border-left: 3px solid transparent;
+        }
+
+        @media (min-width: 1024px) {
+            .dropdown-menu-modern a {
+                padding: 0.75rem 1.25rem;
+            }
+        }
+
+        .dropdown-menu-modern a:hover {
+            background: linear-gradient(90deg, #eff6ff 0%, #dbeafe 100%);
+            color: var(--primary-color);
+            border-left-color: var(--primary-color);
+            padding-left: 1.25rem;
+        }
+
+        .dropdown-arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown-modern:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-modern {
+            background: linear-gradient(180deg, #1e3a8a 0%, #1a56db 100%);
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            width: 100%;
+            max-height: calc(100vh - 64px);
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        #mobile-menu {
+            z-index: 9999;
+        }
+
+        .hamburger-btn {
+            min-width: 44px;
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #mobile-menu a,
+        #mobile-menu summary {
+            min-height: 44px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Header Logo & Text */
+        .header-logo {
+            height: 36px;
+            width: 36px;
+        }
+
+        @media (min-width: 375px) {
+            .header-logo {
+                height: 40px;
+                width: 40px;
+            }
+        }
+
+        @media (min-width: 640px) {
+            .header-logo {
+                height: 56px;
+                width: 56px;
+            }
+        }
+
+        .header-title {
+            font-size: 0.625rem;
+            line-height: 1.2;
+            max-width: 150px;
+        }
+
+        @media (min-width: 375px) {
+            .header-title {
+                font-size: 0.6875rem;
+                max-width: 180px;
+            }
+        }
+
+        @media (min-width: 480px) {
+            .header-title {
+                font-size: 0.8125rem;
+                max-width: 250px;
+            }
+        }
+
+        @media (min-width: 640px) {
+            .header-title {
+                font-size: 1.125rem;
+                max-width: none;
+            }
+        }
+
+        .header-subtitle {
+            font-size: 0.5rem;
+            display: none;
+        }
+
+        @media (min-width: 480px) {
+            .header-subtitle {
+                display: block;
+                font-size: 0.5625rem;
+            }
+        }
+
+        @media (min-width: 640px) {
+            .header-subtitle {
+                font-size: 0.75rem;
+            }
+        }
+
+        /* ========================================
+           HERO SLIDESHOW
+           ======================================== */
+        .hero-slideshow {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            min-height: 500px;
+            overflow: hidden;
+        }
+
+        @supports (-webkit-touch-callout: none) {
+            .hero-slideshow {
+                height: 100svh;
+            }
+        }
+
+        .hero-slideshow .slide {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            opacity: 0;
+            transform: scale(1.1);
+            transition: opacity 1.5s ease-in-out, transform 8s ease-out;
+        }
+
+        .hero-slideshow .slide.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .slide-indicators {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 20;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .indicator:hover {
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        .indicator.active {
+            background: var(--secondary-color);
+            border-color: white;
+            transform: scale(1.2);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            color: #fff;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 10px 24px;
+            border-radius: 50px;
+            margin-bottom: 24px;
+            font-weight: 600;
+            font-size: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .hero-badge i {
+            color: var(--secondary-color);
+        }
+
+        .hero-content h1 {
+            font-size: clamp(1.8rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-out 0.2s both;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: #e5e7eb;
+            animation: fadeInUp 1s ease-out 0.4s both;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ========================================
+           ANIMATIONS
+           ======================================== */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0; 
+                transform: translateY(30px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+
+        @keyframes fadeInDown {
+            from { 
+                opacity: 0; 
+                transform: translateY(-30px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* ========================================
+           STATS SECTION
+           ======================================== */
+        .stats-section {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1a56db 100%);
+            padding: 60px 0;
+            margin-top: -80px;
+            position: relative;
+            z-index: 10;
+            overflow: hidden;
+        }
+
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.05" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            opacity: 0.3;
+        }
+
+        @media (max-width: 768px) {
+            .stats-section {
+                margin-top: -50px;
+                padding: 40px 0;
+            }
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .stat-card:hover::before {
+            left: 100%;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .stat-card {
+                padding: 20px 15px;
+                border-radius: 12px;
+            }
+        }
+
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+        }
+
+        .stat-icon i {
+            font-size: 24px;
+            color: var(--primary-dark);
+        }
+
+        @media (max-width: 768px) {
+            .stat-icon {
+                width: 50px;
+                height: 50px;
+            }
+
+            .stat-icon i {
+                font-size: 20px;
+            }
+        }
+
+        .stat-number {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color: white;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .stat-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+            transform: scaleX(0);
+            transition: transform 0.5s ease;
+        }
+
+        .stat-card:hover .stat-bar {
+            transform: scaleX(1);
+        }
+
+        /* ========================================
+           SECTION STYLING
+           ======================================== */
+        .section-container {
+            margin-bottom: 20px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header.light .section-title,
+        .section-header.light .section-tag {
+            color: white;
+        }
+
+        .section-header.light .section-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            color: var(--primary-dark);
+            padding: 6px 20px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        .section-line {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            color: var(--gray-500);
+            font-size: 16px;
+            max-width: 600px;
+            margin: 15px auto 0;
+        }
+
+        /* ========================================
+           VISION MISSION CARDS
+           ======================================== */
+        .vision-mission-card {
+            position: relative;
+            padding: 30px;
+            border-radius: 20px;
+            background: white;
+            transition: all 0.4s ease;
+            border: 1px solid var(--gray-200);
+            overflow: hidden;
+        }
+
+        .vision-mission-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--secondary-color), var(--accent-color));
+        }
+
+        .vision-mission-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .card-icon i {
+            font-size: 24px;
+            color: white;
+        }
+
+        .principal-signature {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px dashed var(--gray-200);
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        /* ========================================
+           WHY JOIN CARDS
+           ======================================== */
+        .why-join-container {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--gray-200);
+        }
+
+        .why-join-card {
+            padding: 25px;
+            border-radius: 15px;
+            background: var(--gray-100);
+            transition: all 0.4s ease;
+            border: 1px solid transparent;
+            text-align: center;
+        }
+
+        .why-join-card:hover {
+            background: white;
+            border-color: var(--secondary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .why-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            transition: all 0.4s ease;
+        }
+
+        .why-join-card:hover .why-icon {
+            transform: rotateY(180deg);
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+        }
+
+        .why-icon i {
+            font-size: 28px;
+            color: white;
+        }
+
+        .why-join-card h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .why-join-card p {
+            font-size: 13px;
+            color: var(--gray-500);
+        }
+
+        /* ========================================
+           ACHIEVEMENTS SECTION
+           ======================================== */
+        .achievements-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            padding: 60px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .achievements-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 60%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(201, 162, 39, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            .achievements-section {
+                padding: 40px 20px;
+            }
+        }
+
+        .achievement-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 25px;
+            display: flex;
+            gap: 20px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .achievement-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(201, 162, 39, 0.1), transparent);
+            transition: width 0.5s ease;
+        }
+
+        .achievement-card:hover::before {
+            width: 100%;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .achievement-card {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        .achievement-icon {
+            width: 70px;
+            height: 70px;
+            min-width: 70px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .achievement-icon i {
+            font-size: 28px;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .achievement-icon {
+                margin: 0 auto;
+            }
+        }
+
+        .achievement-content {
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+
+        .achievement-content h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .achievement-content p {
+            font-size: 14px;
+            color: var(--gray-500);
+            line-height: 1.6;
+        }
+
+        .achievement-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            color: var(--primary-dark);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-top: 10px;
+        }
+
+        /* ========================================
+           FACILITY CARDS
+           ======================================== */
+        .facility-card {
+            border-radius: 20px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s ease;
+            border: 1px solid var(--gray-200);
+        }
+
+        .facility-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .facility-image {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .facility-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .facility-card:hover .facility-image img {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .facility-image {
+                height: 150px;
+            }
+        }
+
+        .facility-content {
+            padding: 20px;
+        }
+
+        .facility-content h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .facility-content p {
+            font-size: 14px;
+            color: var(--gray-500);
+            line-height: 1.6;
+        }
+
+        /* ========================================
+           CTA SECTION
+           ======================================== */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            border-radius: 30px;
+            padding: 60px 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .cta-section {
+                padding: 40px 20px;
+                border-radius: 20px;
+            }
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 800;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .cta-content > p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 30px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.4s ease;
+        }
+
+        .cta-btn.primary {
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            color: var(--primary-dark);
+        }
+
+        .cta-btn.primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(201, 162, 39, 0.4);
+        }
+
+        .cta-decoration .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(201, 162, 39, 0.1);
+        }
+
+        .circle-1 {
+            width: 300px;
+            height: 300px;
+            top: -100px;
+            right: -100px;
+        }
+
+        .circle-2 {
+            width: 200px;
+            height: 200px;
+            bottom: -50px;
+            left: -50px;
+        }
+
+        .circle-3 {
+            width: 150px;
+            height: 150px;
+            top: 50%;
+            left: 20%;
+        }
+
+        /* ========================================
+           QUICK LINKS SIDEBAR
+           ======================================== */
+        .quick-links-sidebar {
+            position: fixed;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .quick-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--primary-color);
+            color: white;
+            padding: 12px 15px;
+            border-radius: 10px 0 0 10px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            transform: translateX(calc(100% - 45px));
+            white-space: nowrap;
+        }
+
+        .quick-link:hover {
+            transform: translateX(0);
+            background: var(--primary-light);
+        }
+
+        .quick-link i {
+            min-width: 20px;
+            text-align: center;
+        }
+
+        .quick-link span {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .quick-links-sidebar {
+                display: none;
+            }
+        }
+
+        /* ========================================
+           FEES TABLE
+           ======================================== */
+        .fees-table {
+            width: 100%;
+            min-width: 100%;
+        }
+
+        .fees-table th, 
+        .fees-table td {
+            padding: 12px 24px;
+            text-align: left;
+            border-bottom: 1px solid #f3f4f6;
+            font-size: 0.875rem;
+        }
+
+        .fees-table th {
+            background-color: #f9fafb;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #4b5563;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 768px) {
+            .fees-table th, 
+            .fees-table td {
+                padding: 8px 12px;
+                font-size: 0.8125rem;
+            }
+
+            .fees-table th {
+                font-size: 0.6875rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .fees-table th, 
+            .fees-table td {
+                padding: 6px 8px;
+                font-size: 0.75rem;
+            }
+
+            .fees-table th {
+                font-size: 0.625rem;
+            }
+        }
+
+        /* ========================================
+           CONTENT VIEWS
+           ======================================== */
+        .content-view {
+            display: block;
+        }
+
+        .content-view.hidden {
+            display: none;
+        }
+
+    </style>
+</head>
+
+
+<body class="min-h-screen flex flex-col lang-en">
+
+    <!-- LANGUAGE TOGGLE BUTTON (FLOATING) -->
+    <button class="lang-toggle" onclick="toggleLanguage()" id="langToggleBtn" aria-label="Toggle Language">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
+        </svg>
+        <span class="lang-text">
+            <span id="langBtnText">मराठी</span>
+        </span>
+    </button>
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-50 shadow-lg navbar-modern">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-14 sm:h-16 md:h-20">
+                <a href="#" onclick="navigateTo('home-view'); return false;" class="flex-shrink-0 flex items-center group min-w-0">
+                    <img src="./assests/logo.png" alt="College Logo" class="header-logo mr-2 sm:mr-3 transition-transform duration-300 group-hover:scale-110 flex-shrink-0">
+                    <div class="min-w-0 flex-1">
+                        <div class="header-subtitle font-semibold text-white/80" data-en="Kisan Shikshan Prasarak Mandal's" data-mr="किसान शिक्षण प्रसारक मंडळाचे">Kisan Shikshan Prasarak Mandal's</div>
+                        <div class="header-title font-extrabold text-white tracking-tight line-clamp-2" data-en="Chhatrapati Shivajiraje Mahavidyalaya" data-mr="छत्रपती शिवाजीराजे महाविद्यालय">Chhatrapati Shivajiraje Mahavidyalaya</div>
+                    </div>
+                </a>
+
+                <div class="flex items-center">
+                    <nav class="hidden lg:block">
+                        <div class="flex items-center space-x-1">
+                            <a href="#" onclick="navigateTo('home-view'); return false;" class="nav-link-modern">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                                <span data-en="Home" data-mr="मुख्यपृष्ठ">Home</span>
+                            </a>
+
+                            <div class="dropdown-modern">
+                                <button class="nav-link-modern">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                                    <span data-en="Institute" data-mr="संस्था">Institute</span>
+                                    <svg class="w-4 h-4 dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="dropdown-menu-modern">
+                                    <a href="#" onclick="navigateTo('about-us-view'); return false;" data-en="About Us" data-mr="आमच्याबद्दल">About Us</a>
+                                    <a href="#" onclick="navigateTo('governance-view'); return false;" data-en="Governance" data-mr="प्रशासन">Governance</a>
+                                    <a href="#" onclick="navigateTo('institute-profile-view'); return false;" data-en="Institute Profile" data-mr="संस्थेची माहिती">Institute Profile</a>
+                                </div>
+                            </div>
+
+                            <div class="dropdown-modern">
+                                <button class="nav-link-modern">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                                    <span data-en="Department" data-mr="विभाग">Department</span>
+                                    <svg class="w-4 h-4 dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="dropdown-menu-modern">
+                                    <a href="#" onclick="navigateTo('bca-view'); return false;" data-en="BCA" data-mr="बीसीए">BCA</a>
+                                    <a href="#" onclick="navigateTo('bcs-view'); return false;" data-en="BCS" data-mr="बीसीएस">BCS</a>
+                                    <a href="#" onclick="navigateTo('fees-view'); return false;" data-en="Fees Structure" data-mr="शुल्क रचना">Fees Structure</a>
+                                    <a href="#" onclick="navigateTo('timetable-view'); return false;" data-en="Time Table" data-mr="वेळापत्रक">Time Table</a>
+                                    <a href="#" onclick="navigateTo('admission-process-view'); return false;" data-en="Admission Process" data-mr="प्रवेश प्रक्रिया">Admission Process</a>
+                                </div>
+                            </div>
+
+                            <div class="dropdown-modern">
+                                <button class="nav-link-modern">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                    <span data-en="Information" data-mr="माहिती">Information</span>
+                                    <svg class="w-4 h-4 dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                                </button>
+                                <div class="dropdown-menu-modern">
+                                    <a href="#" onclick="navigateTo('faculty-staff-view'); return false;" data-en="Faculty and Staff" data-mr="शिक्षक व कर्मचारी">Faculty and Staff</a>
+                                    <a href="#" onclick="navigateTo('committees-view'); return false;" data-en="Committees/Cell" data-mr="समित्या/सेल">Committees/Cell</a>
+                                    <a href="#" onclick="navigateTo('pdf-links-view'); return false;" data-en="Syllabus & Scholarship" data-mr="अभ्यासक्रम व शिष्यवृत्ती">Syllabus & Scholarship</a>
+                                    <a href="#" onclick="navigateTo('research-view'); return false;" data-en="Research" data-mr="संशोधन">Research</a>
+                                    <a href="#" onclick="navigateTo('curricula-view'); return false;" data-en="Academic Curricula" data-mr="शैक्षणिक अभ्यासक्रम">Academic Curricula</a>
+                                </div>
+                            </div>
+
+                            <a href="#contact-footer" onclick="scrollToFooter(); return false;" class="nav-link-modern">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                <span data-en="Contact" data-mr="संपर्क">Contact</span>
+                            </a>
+
+                            <!-- Desktop Language Selector -->
+                            <div class="lang-selector-desktop">
+                                <button onclick="setLanguage('en')" id="langEnBtn" class="active">EN</button>
+                                <button onclick="setLanguage('mr')" id="langMrBtn">मरा</button>
+                            </div>
+                        </div>
+                    </nav>
+
+                    <div class="lg:hidden flex items-center">
+                        <button onclick="toggleMenu()" class="hamburger-btn inline-flex items-center justify-center p-2 rounded-md text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white transition-all duration-300" aria-label="Toggle menu">
+                            <svg class="h-6 w-6" id="menu-icon-open" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                            <svg class="h-6 w-6 hidden" id="menu-icon-close" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MOBILE MENU -->
+        <div class="lg:hidden hidden mobile-menu-modern shadow-xl" id="mobile-menu">
+            <div class="pt-2 pb-4 space-y-1 px-3 max-h-[calc(100vh-56px)] sm:max-h-[calc(100vh-64px)] overflow-y-auto">
+                
+                <!-- Mobile Language Toggle -->
+                <div class="flex items-center justify-center gap-2 py-3 mb-2 border-b border-white/20">
+                    <span class="text-white/80 text-sm" data-en="Language:" data-mr="भाषा:">Language:</span>
+                    <button onclick="setLanguage('en');" class="px-4 py-2 rounded-full text-sm font-semibold transition-all" id="mobileLangEn" style="background: white; color: #1a56db;">English</button>
+                    <button onclick="setLanguage('mr');" class="px-4 py-2 rounded-full text-sm font-semibold transition-all" id="mobileLangMr" style="background: rgba(255,255,255,0.2); color: white;">मराठी</button>
+                </div>
+
+                <a href="#" onclick="navigateTo('home-view'); toggleMenu(); return false;" class="block px-4 py-3 rounded-lg text-base font-medium text-white hover:bg-white/10 transition-all duration-200">
+                    🏠 <span data-en="Home" data-mr="मुख्यपृष्ठ">Home</span>
+                </a>
+
+                <details class="group">
+                    <summary class="flex items-center justify-between px-4 py-3 rounded-lg text-base font-medium text-white hover:bg-white/10 cursor-pointer transition-all duration-200 list-none">
+                        🏛️ <span data-en="Institute" data-mr="संस्था" class="flex-1 ml-2">Institute</span>
+                        <svg class="w-5 h-5 group-open:rotate-180 transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="pl-6 pt-1 pb-2 space-y-1">
+                        <a href="#" onclick="navigateTo('about-us-view'); toggleMenu(); return false;" class="block px-4 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200" data-en="About Us" data-mr="आमच्याबद्दल">About Us</a>
+                        <a href="#" onclick="navigateTo('governance-view'); toggleMenu(); return false;" class="block px-4 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200" data-en="Governance" data-mr="प्रशासन">Governance</a>
+                        <a href="#" onclick="navigateTo('institute-profile-view'); toggleMenu(); return false;" class="block px-4 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200" data-en="Institute Profile" data-mr="संस्थेची माहिती">Institute Profile</a>
+                    </div>
+                </details>
+                
+                <details class="group">
+                    <summary class="flex items-center justify-between px-4 py-3 rounded-lg text-base font-medium text-white hover:bg-white/10 cursor-pointer transition-all duration-200 list-none">
+                        📚 <span data-en="Department" data-mr="विभाग" class="flex-1 ml-2">Department</span>
+                        <svg class="w-5 h-5 group-open:rotate-180 transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="pl-6 pt-1 pb-2 space-y-1">
+                        <a href="#" onclick="navigateTo('bca-view'); toggleMenu(); return false;" class="block px-4 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200" data-en="BCA" data-mr="बीसीए">BCA</a>
+                        <a href="#" onclick="navigateTo('bcs-view'); toggleMenu(); return false;" class="block px-4 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200" data-en="BCS" data-mr="बीसीएस">BCS</a>
+                        <a href="#" onclick="navigateTo('fees-view'); toggleMenu(); return false;" class="block px-4 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200" data-en="Fees Structure" data-mr="शुल्क रचना">Fees Structure</a>
+                        <a href="#" onclick="navigateTo('timetable-view'); toggleMenu(); return false;" class="block px-4 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200" data-en="Time Table" data-mr="वेळापत्रक">Time Table</a>
+                        <a href="#" onclick="navigateTo('admission-process-view'); toggleMenu(); return false;" class="block px-4 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200" data-en="Admission Process" data-mr="प्रवेश प्रक्रिया">Admission Process</a>
+                    </div>
+                </details>
+
+                <details class="group">
+                    <summary class="flex items-center justify-between px-4 py-3 rounded-lg text-base font-medium text-white hover:bg-white/10 cursor-pointer transition-all duration-200 list-none">
+                        ℹ️ <span data-en="Information" data-mr="माहिती" class="flex-1 ml-2">Information</span>
+                        <svg class="w-5 h-5 group-open:rotate-180 transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="pl-6 pt-1 pb-2 space-y-1">
+                        <a href="#" onclick="navigateTo('faculty-staff-view'); toggleMenu(); return false;" class="block px-4 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200" data-en="Faculty and Staff" data-mr="शिक्षक व कर्मचारी">Faculty and Staff</a>
+                        <a href="#" onclick="navigateTo('committees-view'); toggleMenu(); return false;" class="block px-4 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200" data-en="Committees/Cell" data-mr="समित्या/सेल">Committees/Cell</a>
+                        <a href="#" onclick="navigateTo('pdf-links-view'); toggleMenu(); return false;" class="block px-4 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200" data-en="Syllabus & Scholarship" data-mr="अभ्यासक्रम व शिष्यवृत्ती">Syllabus & Scholarship</a>
+                        <a href="#" onclick="navigateTo('research-view'); toggleMenu(); return false;" class="block px-4 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200" data-en="Research" data-mr="संशोधन">Research</a>
+                        <a href="#" onclick="navigateTo('curricula-view'); toggleMenu(); return false;" class="block px-4 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200" data-en="Academic Curricula" data-mr="शैक्षणिक अभ्यासक्रम">Academic Curricula</a>
+                    </div>
+                </details>
+
+                <a href="#contact-footer" onclick="scrollToFooter(); toggleMenu(); return false;" class="block px-4 py-3 rounded-lg text-base font-medium text-white hover:bg-white/10 transition-all duration-200">
+                    ✉️ <span data-en="Contact" data-mr="संपर्क">Contact</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow">
+        
+        <!-- HOME VIEW -->
+        <div id="home-view" class="content-view py-0">
+
+            <!-- HERO SLIDESHOW -->
+            <div class="hero-slideshow">
+                <img src="./assests/shivaji front.jpeg" class="slide active" alt="College Entrance">
+                <img src="./assests/principal.jpg" class="slide" alt="Principal">
+                <img src="./assests/slideshow.jpeg" class="slide" alt="Campus View">
+                <img src="./assests/slideshow 5.jpeg" class="slide" alt="College Building">
+                <img src="./assests/slideshow 3.jpeg" class="slide" alt="College Events">
+
+                <!-- Slide Indicators -->
+                <div class="slide-indicators">
+                    <span class="indicator active" data-slide="0"></span>
+                    <span class="indicator" data-slide="1"></span>
+                    <span class="indicator" data-slide="2"></span>
+                    <span class="indicator" data-slide="3"></span>
+                    <span class="indicator" data-slide="4"></span>
+                </div>
+
+                <!-- Overlay -->
+                <div class="hero-overlay">
+                    <div class="hero-content">
+                        <div class="hero-badge">
+                            <i class="fas fa-star"></i> NAAC A+ Accredited Institution
+                        </div>
+                        <h1 data-en="Welcome to Chhatrapati Shivajiraje Mahavidyalaya" data-mr="छत्रपती शिवाजीराजे महाविद्यालयात आपले स्वागत">Welcome to Chhatrapati Shivajiraje Mahavidyalaya</h1>
+                        <p data-en="Empowering the next generation of IT professionals with innovative curriculum and cutting-edge facilities." data-mr="नवीन अभ्यासक्रम आणि आधुनिक सुविधांसह आयटी व्यावसायिकांच्या पुढच्या पिढीला सक्षम करत आहे.">
+                            Empowering the next generation of IT professionals with innovative curriculum and cutting-edge facilities.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STATS COUNTER SECTION -->
+            <div class="stats-section">
+                <div class="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-number"><span class="counter" data-target="1600">0</span>+</div>
+                            <div class="stat-label" data-en="Total Students" data-mr="एकूण विद्यार्थी">Total Students</div>
+                            <div class="stat-bar"></div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div class="stat-number"><span class="counter" data-target="27">0</span></div>
+                            <div class="stat-label" data-en="Ph.D. Faculty" data-mr="पीएच.डी. शिक्षक">Ph.D. Faculty</div>
+                            <div class="stat-bar"></div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div class="stat-number">A+</div>
+                            <div class="stat-label" data-en="NAAC Grade" data-mr="NAAC श्रेणी">NAAC Grade</div>
+                            <div class="stat-bar"></div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-history"></i>
+                            </div>
+                            <div class="stat-number"><span class="counter" data-target="28">0</span>+</div>
+                            <div class="stat-label" data-en="Years of Excellence" data-mr="उत्कृष्टतेची वर्षे">Years of Excellence</div>
+                            <div class="stat-bar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MAIN CONTENT SECTIONS -->
+            <div class="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-6 md:py-8 space-y-8 sm:space-y-12 md:space-y-16">
+                
+                <!-- Vision & Mission Section -->
+                <div class="section-container animate-on-scroll">
+                    <div class="section-header">
+                        <span class="section-tag">About Us</span>
+                        <h2 class="section-title">Our Vision & Mission</h2>
+                        <div class="section-line"></div>
+                    </div>
+                    
+                    <div class="bg-white p-4 sm:p-6 md:p-8 rounded-2xl shadow-2xl grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                        <div class="vision-mission-card vision-card">
+                            <div class="card-icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-primary mb-3">
+                                <span data-en="Our Vision" data-mr="आमची दृष्टी">Our Vision</span>
+                            </h3>
+                            <p class="text-gray-600 text-sm sm:text-base leading-relaxed" data-en="To be the most trusted and chosen education provider of the region through sincere teaching and providing excellent educational infrastructure to empower masses. 'Quality Education for the advancement of the masses.'" data-mr="प्रामाणिक शिक्षण आणि उत्कृष्ट शैक्षणिक पायाभूत सुविधा पुरवून जनसामान्यांना सक्षम करण्यासाठी प्रदेशातील सर्वात विश्वसनीय आणि निवडलेले शिक्षण प्रदाता बनणे. 'जनसामान्यांच्या उन्नतीसाठी गुणवत्तापूर्ण शिक्षण.'">To be the most trusted and chosen education provider of the region through sincere teaching and providing excellent educational infrastructure to empower masses. "Quality Education for the advancement of the masses."</p>
+                        </div>
+                        <div class="vision-mission-card mission-card">
+                            <div class="card-icon">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <h3 class="text-xl sm:text-2xl font-bold text-primary mb-3">
+                                <span data-en="Principal's Message" data-mr="प्राचार्यांचा संदेश">Principal's Message</span>
+                            </h3>
+                            <p class="text-gray-600 text-sm sm:text-base leading-relaxed" data-en="'Dear Parents, students and well-wishers, greetings from SMU family. First and foremost, I would like to express my heartfelt gratitude to each and every one of you for your unwavering encouragement.'" data-mr="'प्रिय पालक, विद्यार्थी आणि शुभचिंतक, SMU कुटुंबाकडून अभिवादन. सर्वप्रथम, तुमच्या अखंड प्रोत्साहनाबद्दल मी तुम्हा सर्वांचे मनापासून आभार मानू इच्छितो.'">"Dear Parents, students and well-wishers, greetings from SMU family. First and foremost, I would like to express my heartfelt gratitude to each and every one of you for your unwavering encouragement."</p>
+                            <div class="principal-signature">
+                                <span class="font-semibold text-primary">- Dr. Ramkishan M. Manjre</span>
+                                <span class="text-gray-500 text-sm">(M.A., Ph.D)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Why Join Section -->
+                <div class="section-container animate-on-scroll">
+                    <div class="section-header">
+                        <span class="section-tag">Benefits</span>
+                        <h2 class="section-title" data-en="Why Join Shivaji Mahavidyalaya?" data-mr="शिवाजी महाविद्यालयात का सामील व्हावे?">Why Join Shivaji Mahavidyalaya?</h2>
+                        <div class="section-line"></div>
+                    </div>
+                    
+                    <div class="why-join-container">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                            <div class="why-join-card">
+                                <div class="why-icon">
+                                    <i class="fas fa-chalkboard-teacher"></i>
+                                </div>
+                                <h4 data-en="Highly Experienced and Qualified Faculty" data-mr="अत्यंत अनुभवी आणि पात्र शिक्षक">Highly Experienced and Qualified Faculty</h4>
+                                <p>27+ PhD holders dedicated to your success</p>
+                            </div>
+                            <div class="why-join-card">
+                                <div class="why-icon">
+                                    <i class="fas fa-laptop-code"></i>
+                                </div>
+                                <h4 data-en="Practice-oriented learning" data-mr="प्रात्यक्षिक-केंद्रित शिक्षण">Practice-oriented Learning</h4>
+                                <p>Hands-on experience with real projects</p>
+                            </div>
+                            <div class="why-join-card">
+                                <div class="why-icon">
+                                    <i class="fas fa-microscope"></i>
+                                </div>
+                                <h4 data-en="Emphasis on research" data-mr="संशोधनावर भर">Emphasis on Research</h4>
+                                <p>7 recognized research guides available</p>
+                            </div>
+                            <div class="why-join-card">
+                                <div class="why-icon">
+                                    <i class="fas fa-industry"></i>
+                                </div>
+                                <h4 data-en="Industry-aligned curriculum for BCA/BCS" data-mr="BCA/BCS साठी उद्योग-संरेखित अभ्यासक्रम">Industry-aligned Curriculum</h4>
+                                <p>Updated curriculum matching industry needs</p>
+                            </div>
+                            <div class="why-join-card">
+                                <div class="why-icon">
+                                    <i class="fas fa-desktop"></i>
+                                </div>
+                                <h4 data-en="Modern Computer Labs and Library Resources" data-mr="आधुनिक संगणक प्रयोगशाळा आणि ग्रंथालय संसाधने">Modern Computer Labs</h4>
+                                <p>State-of-the-art infrastructure</p>
+                            </div>
+                            <div class="why-join-card">
+                                <div class="why-icon">
+                                    <i class="fas fa-medal"></i>
+                                </div>
+                                <h4 data-en="Excellent NAAC A+ Accreditation" data-mr="उत्कृष्ट NAAC A+ मान्यता">NAAC A+ Accreditation</h4>
+                                <p>Recognized quality education</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ACHIEVEMENTS SECTION -->
+                <div class="achievements-section rounded-2xl animate-on-scroll">
+                    <div class="max-w-7xl mx-auto">
+                        <div class="section-header light">
+                            <span class="section-tag">Our Pride</span>
+                            <h2 class="section-title" data-en="Our Achievements" data-mr="आमची कामगिरी">Our Achievements</h2>
+                            <p class="section-subtitle" data-en="Celebrating excellence and milestones that make us proud" data-mr="उत्कृष्टता आणि टप्पे साजरे करणे ज्यामुळे आम्हाला अभिमान वाटतो">Celebrating excellence and milestones that make us proud</p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                            <div class="achievement-card">
+                                <div class="achievement-icon">
+                                    <i class="fas fa-certificate"></i>
+                                </div>
+                                <div class="achievement-content">
+                                                                        <h4 data-en="NAAC A+ Accreditation" data-mr="NAAC A+ मान्यता">NAAC A+ Accreditation</h4>
+                                    <p data-en="Achieved NAAC A+ grade with 3.27 CGPA, reflecting our commitment to quality education." data-mr="3.27 CGPA सह NAAC A+ श्रेणी प्राप्त केली, गुणवत्तापूर्ण शिक्षणासाठी आमची वचनबद्धता दर्शवते.">Achieved NAAC A+ grade with 3.27 CGPA, reflecting our commitment to quality education.</p>
+                                    <div class="achievement-badge">3.27 CGPA</div>
+                                </div>
+                            </div>
+
+                            <div class="achievement-card">
+                                <div class="achievement-icon">
+                                    <i class="fas fa-user-graduate"></i>
+                                </div>
+                                <div class="achievement-content">
+                                    <h4 data-en="1600+ Students Enrolled" data-mr="१६००+ विद्यार्थी नोंदणीकृत">1600+ Students Enrolled</h4>
+                                    <p data-en="Serving a diverse student community across multiple disciplines and programs." data-mr="विविध विषय आणि कार्यक्रमांमध्ये वैविध्यपूर्ण विद्यार्थी समुदायाची सेवा.">Serving a diverse student community across multiple disciplines and programs.</p>
+                                    <div class="achievement-badge">Growing</div>
+                                </div>
+                            </div>
+
+                            <div class="achievement-card">
+                                <div class="achievement-icon">
+                                    <i class="fas fa-users-cog"></i>
+                                </div>
+                                <div class="achievement-content">
+                                    <h4 data-en="27 Ph.D. Faculty Members" data-mr="२७ पीएच.डी. शिक्षक सदस्य">27 Ph.D. Faculty Members</h4>
+                                    <p data-en="Expert faculty with doctoral degrees ensuring high-quality education and research." data-mr="डॉक्टरेट पदवी असलेले तज्ञ शिक्षक उच्च-गुणवत्तेचे शिक्षण आणि संशोधन सुनिश्चित करतात.">Expert faculty with doctoral degrees ensuring high-quality education and research.</p>
+                                    <div class="achievement-badge">Expert Team</div>
+                                </div>
+                            </div>
+
+                            <div class="achievement-card">
+                                <div class="achievement-icon">
+                                    <i class="fas fa-flask"></i>
+                                </div>
+                                <div class="achievement-content">
+                                    <h4 data-en="Excellence in Research" data-mr="संशोधनात उत्कृष्टता">Excellence in Research</h4>
+                                    <p data-en="7 recognized research guides fostering innovation and scholarly publications." data-mr="७ मान्यताप्राप्त संशोधन मार्गदर्शक नवकल्पना आणि विद्वत्तापूर्ण प्रकाशनांना प्रोत्साहन देतात.">7 recognized research guides fostering innovation and scholarly publications.</p>
+                                    <div class="achievement-badge">7 Guides</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- INFRASTRUCTURE SECTION -->
+                <div class="section-container animate-on-scroll">
+                    <div class="section-header">
+                        <span class="section-tag">Campus</span>
+                        <h2 class="section-title" data-en="Our Infrastructure & Facilities" data-mr="आमची पायाभूत सुविधा आणि सोयी">Our Infrastructure & Facilities</h2>
+                        <div class="section-line"></div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                        <div class="facility-card">
+                            <div class="facility-image">
+                                <img src="./assests/lab.jpeg" alt="Computer Labs">
+                            </div>
+                            <div class="facility-content">
+                                <h3 data-en="Computer Labs" data-mr="संगणक प्रयोगशाळा">Computer Labs</h3>
+                                <p data-en="Specialized labs, Modern networked PCs." data-mr="विशेष प्रयोगशाळा, आधुनिक नेटवर्क संगणक.">5 specialized labs with high-speed internet, modern hardware & latest software tools.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="facility-card">
+                            <div class="facility-image">
+                                <img src="./assests/lib.avif" alt="Central Library">
+                            </div>
+                            <div class="facility-content">
+                                <h3 data-en="Library" data-mr="ग्रंथालय">Central Library</h3>
+                                <p data-en="Vast collection of IT books, journals, and e-resources." data-mr="आयटी पुस्तके, जर्नल्स आणि ई-संसाधनांचा विशाल संग्रह.">Digital library with INFLIBNET membership, e-journals & reading rooms.</p>
+                            </div>
+                        </div>
+
+                        <div class="facility-card">
+                            <div class="facility-image">
+                                <img src="./assests/sporttt.jpeg" alt="Sports Grounds">
+                            </div>
+                            <div class="facility-content">
+                                <h3 data-en="Sports" data-mr="क्रीडा">Sports Complex</h3>
+                                <p data-en="Facilities for Cricket, Volleyball, Chess, and more." data-mr="क्रिकेट, व्हॉलीबॉल, बुद्धिबळ आणि बरेच काही.">Multi-sport complex with indoor & outdoor facilities for all games.</p>
+                            </div>
+                        </div>
+
+                        <div class="facility-card">
+                            <div class="facility-image">
+                                <img src="./assests/audddit.jpeg" alt="Seminar Hall">
+                            </div>
+                            <div class="facility-content">
+                                <h3 data-en="Seminar Hall" data-mr="सेमिनार हॉल">Auditorium</h3>
+                                <p data-en="Fully equipped hall with audiovisual facilities." data-mr="ऑडिओव्हिज्युअल सुविधांसह पूर्णपणे सुसज्ज हॉल.">Air-conditioned with professional sound & projection systems.</p>
+                            </div>
+                        </div>
+
+                        <div class="facility-card">
+                            <div class="facility-image">
+                                <img src="./assests/workshop.jpeg" alt="Workshop">
+                            </div>
+                            <div class="facility-content">
+                                <h3 data-en="Workshops" data-mr="कार्यशाळा">Innovation Lab</h3>
+                                <p data-en="Space for Science and Tech Events." data-mr="विज्ञान आणि तंत्रज्ञान कार्यक्रमांसाठी जागा.">Dedicated space for hackathons, workshops & innovation projects.</p>
+                            </div>
+                        </div>
+
+                        <div class="facility-card">
+                            <div class="facility-image">
+                                <img src="./assests/cult.jpeg" alt="Cultural">
+                            </div>
+                            <div class="facility-content">
+                                <h3 data-en="Cultural" data-mr="सांस्कृतिक">Cultural Center</h3>
+                                <p data-en="Celebrate Diversity, Unite in Cultural programs." data-mr="विविधता साजरी करा, सांस्कृतिक कार्यक्रमांमध्ये एकत्र या.">Stage for performing arts, dance, music & cultural celebrations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA SECTION -->
+                <div class="cta-section animate-on-scroll">
+                    <div class="cta-content">
+                        <h2 data-en="Ready to Begin Your Journey?" data-mr="तुमचा प्रवास सुरू करण्यास तयार आहात?">Ready to Begin Your Journey?</h2>
+                        <p data-en="Join thousands of successful alumni who started their career at Shivaji Mahavidyalaya" data-mr="शिवाजी महाविद्यालयात आपली कारकीर्द सुरू केलेल्या हजारो यशस्वी माजी विद्यार्थ्यांमध्ये सामील व्हा">Join thousands of successful alumni who started their career at Shivaji Mahavidyalaya</p>
+                        <div class="cta-buttons">
+                            <a href="#" class="cta-btn primary" onclick="navigateTo('admission-process-view'); return false;">
+                                <i class="fas fa-user-plus"></i> 
+                                <span data-en="Apply Now" data-mr="आता अर्ज करा">Apply Now</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="cta-decoration">
+                        <div class="circle circle-1"></div>
+                        <div class="circle circle-2"></div>
+                        <div class="circle circle-3"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- QUICK LINKS SIDEBAR -->
+        <div class="quick-links-sidebar">
+            <a href="#" class="quick-link" onclick="navigateTo('admission-process-view'); return false;">
+                <i class="fas fa-user-plus"></i>
+                <span>Apply Now</span>
+            </a>
+            <a href="#contact-footer" class="quick-link" onclick="scrollToFooter(); return false;">
+                <i class="fas fa-phone"></i>
+                <span>Contact</span>
+            </a>
+        </div>
+
+        <!-- ABOUT US VIEW -->
+        <div id="about-us-view" class="content-view hidden py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-extrabold text-primary mb-6 border-b-2 border-primary pb-2" 
+                    data-en="About Chh. Shivajiraje Mahavidyalaya" 
+                    data-mr="छ. शिवाजीराजे महाविद्यालयाबद्दल">About Chh. Shivajiraje Mahavidyalaya</h2>
+                <div class="bg-white p-8 rounded-lg shadow-xl space-y-6">
+                    <p class="text-lg text-gray-700" 
+                       data-en="Established in 1995, Chh. Shivajiraje Mahavidyalaya, Udgir, is a cornerstone of higher education in the region. The college offers undergraduate programs in Arts, Commerce, Science, and a Computer-based professional course, enrolling over 1600 students in its regular program. With a large campus, dedicated and highly qualified faculty (including 27 Ph.D. holders and 7 research guides), and a strong focus on research and community service (NSS, NCC, Earn and Learn scheme), the institution is committed to providing quality, holistic education for the advancement and betterment of the masses, as reflected by its NAAC A+ grade accreditation."
+                       data-mr="१९९५ मध्ये स्थापित, छ. शिवाजीराजे महाविद्यालय, उदगीर, हे या प्रदेशातील उच्च शिक्षणाचा आधारस्तंभ आहे. महाविद्यालय कला, वाणिज्य, विज्ञान आणि संगणक-आधारित व्यावसायिक अभ्यासक्रमात पदवी कार्यक्रम प्रदान करते, त्याच्या नियमित कार्यक्रमात १६०० हून अधिक विद्यार्थी नोंदणीकृत आहेत. मोठे परिसर, समर्पित आणि उच्च पात्र शिक्षक (२७ पीएच.डी. धारक आणि ७ संशोधन मार्गदर्शकांसह), आणि संशोधन आणि समुदाय सेवेवर (एनएसएस, एनसीसी, कमवा आणि शिका योजना) मजबूत लक्ष केंद्रित करून, संस्था जनसामान्यांच्या उन्नती आणि कल्याणासाठी गुणवत्तापूर्ण, सर्वांगीण शिक्षण प्रदान करण्यासाठी वचनबद्ध आहे, जसे की तिच्या NAAC A+ श्रेणी मान्यतेवरून दिसून येते.">
+                        Established in 1995, Chh. Shivajiraje Mahavidyalaya, Udgir, is a cornerstone of higher education in the region. The college offers undergraduate programs in Arts, Commerce, Science, and a Computer-based professional course, enrolling over 1600 students in its regular program. With a large campus, dedicated and highly qualified faculty (including 27 Ph.D. holders and 7 research guides), and a strong focus on research and community service (NSS, NCC, Earn and Learn scheme), the institution is committed to providing quality, holistic education for the advancement and betterment of the masses, as reflected by its NAAC A+ grade accreditation.
+                    </p>
+                    
+                    <h3 class="text-2xl font-semibold text-primary-light pt-4" 
+                        data-en="Our Values" 
+                        data-mr="आमची मूल्ये">Our Values</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 pl-4">
+                        <li data-en="Integrity: Upholding the highest standards of academic honesty and ethical conduct." 
+                            data-mr="सचोटी: शैक्षणिक प्रामाणिकपणा आणि नैतिक आचरणाचे सर्वोच्च मानके राखणे.">
+                            Integrity: Upholding the highest standards of academic honesty and ethical conduct.
+                        </li>
+                        <li data-en="Innovation: Encouraging creative thinking and adoption of new technologies." 
+                            data-mr="नवकल्पना: सर्जनशील विचारसरणी आणि नवीन तंत्रज्ञानाचा अवलंब करण्यास प्रोत्साहन देणे.">
+                            Innovation: Encouraging creative thinking and adoption of new technologies.
+                        </li>
+                        <li data-en="Excellence: Striving for quality in teaching, research, and administration." 
+                            data-mr="उत्कृष्टता: शिक्षण, संशोधन आणि प्रशासनात गुणवत्तेसाठी प्रयत्न करणे.">
+                            Excellence: Striving for quality in teaching, research, and administration.
+                        </li>
+                        <li data-en="Inclusivity: Providing equal opportunities and a supportive environment for all students." 
+                            data-mr="सर्वसमावेशकता: सर्व विद्यार्थ्यांना समान संधी आणि सहाय्यक वातावरण प्रदान करणे.">
+                            Inclusivity: Providing equal opportunities and a supportive environment for all students.
+                        </li>
+                    </ul>
+                    
+                    <h3 class="text-2xl font-semibold text-primary-light pt-4" 
+                        data-en="College History" 
+                        data-mr="महाविद्यालयाचा इतिहास">College History</h3>
+                    <p class="text-gray-700" 
+                       data-en="Starting with a handful of traditional courses, the college grew rapidly, recognizing the need for technical education. The introduction of the Bachelor of Computer Applications (BCA) and Bachelor of Computer Science (BCS) programs marked a significant milestone, aligning the institution with the demands of the modern workforce. We continue to adapt our curriculum to stay ahead of industry trends."
+                       data-mr="काही पारंपारिक अभ्यासक्रमांसह सुरुवात करून, तांत्रिक शिक्षणाची गरज ओळखून महाविद्यालयाने झपाट्याने प्रगती केली. बॅचलर ऑफ कॉम्प्युटर ॲप्लिकेशन्स (बीसीए) आणि बॅचलर ऑफ कॉम्प्युटर सायन्स (बीसीएस) कार्यक्रमांची सुरुवात ही एक महत्त्वपूर्ण मैलाचा दगड होती, ज्याने संस्थेला आधुनिक कार्यबलाच्या मागण्यांशी जोडले. आम्ही उद्योग ट्रेंडच्या पुढे राहण्यासाठी आमचा अभ्यासक्रम सतत अनुकूलित करत राहतो.">
+                        Starting with a handful of traditional courses, the college grew rapidly, recognizing the need for technical education. The introduction of the Bachelor of Computer Applications (BCA) and Bachelor of Computer Science (BCS) programs marked a significant milestone, aligning the institution with the demands of the modern workforce. We continue to adapt our curriculum to stay ahead of industry trends.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- GOVERNANCE VIEW -->
+        <div id="governance-view" class="content-view hidden py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-extrabold text-primary mb-6 border-b-2 border-primary pb-2" 
+                    data-en="Governance and Administration" 
+                    data-mr="प्रशासन आणि व्यवस्थापन">Governance and Administration</h2>
+                <div class="bg-white p-8 rounded-lg shadow-xl space-y-6">
+                    <p class="text-lg text-gray-700" 
+                       data-en="The college is governed by a dedicated board of management that ensures academic autonomy, financial stability, and adherence to regulatory guidelines. The Principal, supported by department heads and administrative staff, oversees the day-to-day operations."
+                       data-mr="महाविद्यालय एका समर्पित व्यवस्थापन मंडळाद्वारे चालवले जाते जे शैक्षणिक स्वायत्तता, आर्थिक स्थिरता आणि नियामक मार्गदर्शक तत्त्वांचे पालन सुनिश्चित करते. विभाग प्रमुख आणि प्रशासकीय कर्मचाऱ्यांच्या सहकार्याने प्राचार्य दैनंदिन कामकाजावर देखरेख करतात.">
+                        The college is governed by a dedicated board of management that ensures academic autonomy, financial stability, and adherence to regulatory guidelines. The Principal, supported by department heads and administrative staff, oversees the day-to-day operations.
+                    </p>
+                    
+                    <h3 class="text-2xl font-semibold text-primary-light pt-4" 
+                        data-en="Key Governing Bodies" 
+                        data-mr="प्रमुख प्रशासकीय संस्था">Key Governing Bodies</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 pl-4">
+                        <li>
+                            <strong data-en="Governing Body:" data-mr="प्रशासकीय मंडळ:">Governing Body:</strong> 
+                            <span data-en="Responsible for overall policy-making and strategic planning." 
+                                  data-mr="एकूण धोरण निर्मिती आणि रणनीतिक नियोजनासाठी जबाबदार.">
+                                Responsible for overall policy-making and strategic planning.
+                            </span>
+                        </li>
+                        <li>
+                            <strong data-en="College Development Committee (CDC):" data-mr="महाविद्यालय विकास समिती (CDC):">College Development Committee (CDC):</strong> 
+                            <span data-en="Oversees development projects, financial management, and infrastructure planning." 
+                                  data-mr="विकास प्रकल्प, आर्थिक व्यवस्थापन आणि पायाभूत सुविधा नियोजनावर देखरेख करते.">
+                                Oversees development projects, financial management, and infrastructure planning.
+                            </span>
+                        </li>
+                        <li>
+                            <strong data-en="Internal Quality Assurance Cell (IQAC):" data-mr="अंतर्गत गुणवत्ता हमी कक्ष (IQAC):">Internal Quality Assurance Cell (IQAC):</strong> 
+                            <span data-en="Focuses on continuous improvement of academic and administrative performance." 
+                                  data-mr="शैक्षणिक आणि प्रशासकीय कामगिरीत सतत सुधारणा करण्यावर लक्ष केंद्रित करते.">
+                                Focuses on continuous improvement of academic and administrative performance.
+                            </span>
+                        </li>
+                        <li>
+                            <strong data-en="Departmental Heads:" data-mr="विभाग प्रमुख:">Departmental Heads:</strong> 
+                            <span data-en="Manage departmental affairs, curriculum implementation, and student performance." 
+                                  data-mr="विभागीय कार्ये, अभ्यासक्रम अंमलबजावणी आणि विद्यार्थ्यांच्या कामगिरीचे व्यवस्थापन करतात.">
+                                Manage departmental affairs, curriculum implementation, and student performance.
+                            </span>
+                        </li>
+                    </ul>
+
+                    <h3 class="text-2xl font-semibold text-primary-light pt-4" 
+                        data-en="Organogram (Simplified)" 
+                        data-mr="संघटना आकृती (सोपी)">Organogram (Simplified)</h3>
+                    <div class="bg-gray-50 p-6 rounded-md border border-gray-200">
+                        <p class="font-bold text-primary mb-2" 
+                           data-en="Hierarchy:" 
+                           data-mr="क्रमवारी:">Hierarchy:</p>
+                        <p class="text-gray-700" 
+                           data-en="Management Body → Principal → IQAC/CDC/HODs → Faculty & Administrative Staff → Students"
+                           data-mr="व्यवस्थापन मंडळ → प्राचार्य → IQAC/CDC/HODs → शिक्षक आणि प्रशासकीय कर्मचारी → विद्यार्थी">
+                            Management Body &rarr; Principal &rarr; IQAC/CDC/HODs &rarr; Faculty & Administrative Staff &rarr; Students
+                        </p>
+                        <p class="text-sm text-gray-500 mt-2" 
+                           data-en="A detailed organizational chart is available in the Institute Profile documents."
+                           data-mr="तपशीलवार संघटनात्मक आकृती संस्थेच्या प्रोफाइल दस्तऐवजांमध्ये उपलब्ध आहे.">
+                            A detailed organizational chart is available in the Institute Profile documents.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- INSTITUTE PROFILE VIEW -->
+        <div id="institute-profile-view" class="content-view hidden py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-extrabold text-primary mb-6 border-b-2 border-primary pb-2" 
+                    data-en="Institute Profile" 
+                    data-mr="संस्थेची माहिती">Institute Profile</h2>
+                <div class="bg-white p-8 rounded-lg shadow-xl space-y-6">
+                    <h3 class="text-2xl font-semibold text-primary-light mb-4" 
+                        data-en="Highlights" 
+                        data-mr="ठळक वैशिष्ट्ये">Highlights</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="p-4 border-l-4 border-primary bg-gray-50 rounded-md">
+                            <p class="font-bold text-lg text-primary" 
+                               data-en="Affiliation" 
+                               data-mr="संलग्नता">Affiliation</p>
+                            <p class="text-gray-700" 
+                               data-en="Affiliated to SRTM University" 
+                               data-mr="SRTM विद्यापीठाशी संलग्न">Affiliated to SRTM University</p>
+                        </div>
+                        <div class="p-4 border-l-4 border-primary bg-gray-50 rounded-md">
+                            <p class="font-bold text-lg text-primary" 
+                               data-en="Accreditation" 
+                               data-mr="मान्यता">Accreditation</p>
+                            <p class="text-gray-700" 
+                               data-en="Accredited by NAAC with 3.27 A+ Accorded UGC 2(f) & 12(B)" 
+                               data-mr="NAAC द्वारे 3.27 A+ सह मान्यताप्राप्त, UGC 2(f) आणि 12(B) प्रदान">Accredited by NAAC with 3.27 A+ Accorded UGC 2(f) & 12(B)</p>
+                        </div>
+                        <div class="p-4 border-l-4 border-primary bg-gray-50 rounded-md">
+                            <p class="font-bold text-lg text-primary" 
+                               data-en="Established" 
+                               data-mr="स्थापना">Established</p>
+                            <p class="text-gray-700" 
+                               data-en="College: 1995, IT Departments: 2005" 
+                               data-mr="महाविद्यालय: १९९५, आयटी विभाग: २००५">College: 1995, IT Departments: 2005</p>
+                        </div>
+                        <div class="p-4 border-l-4 border-primary bg-gray-50 rounded-md">
+                            <p class="font-bold text-lg text-primary" 
+                               data-en="Student Strength (IT)" 
+                               data-mr="विद्यार्थी संख्या (आयटी)">Student Strength (IT)</p>
+                            <p class="text-gray-700" 
+                               data-en="~200 Students" 
+                               data-mr="~२०० विद्यार्थी">~200 Students</p>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-2xl font-semibold text-primary-light pt-6" 
+                        data-en="Institutional Distinctiveness" 
+                        data-mr="संस्थात्मक वैशिष्ट्य">Institutional Distinctiveness</h3>
+                    <p class="text-gray-700" 
+                       data-en="The institution stands out for its commitment to serving the rural masses by providing High-Quality, Advanced Technical Education (BCA/BCS) alongside traditional streams, making it accessible and affordable. Our distinctiveness lies in blending academic rigor with practical, job-oriented skills, backed by a NAAC A+ grade, a rare achievement in the region. We promote digital literacy and entrepreneurship as core components of our teaching-learning process."
+                       data-mr="पारंपारिक प्रवाहांसोबतच उच्च-गुणवत्तेचे, प्रगत तांत्रिक शिक्षण (बीसीए/बीसीएस) प्रदान करून ग्रामीण जनसामान्यांची सेवा करण्याच्या वचनबद्धतेसाठी संस्था वेगळी आहे, ज्यामुळे ते सुलभ आणि परवडणारे आहे. आमचे वैशिष्ट्य म्हणजे शैक्षणिक कठोरतेला व्यावहारिक, नोकरी-केंद्रित कौशल्यांसह मिसळणे, NAAC A+ श्रेणीने समर्थित, प्रदेशातील एक दुर्मिळ उपलब्धी. आम्ही आमच्या शिक्षण-अध्ययन प्रक्रियेचे मुख्य घटक म्हणून डिजिटल साक्षरता आणि उद्योजकतेला प्रोत्साहन देतो.">
+                        The institution stands out for its commitment to serving the rural masses by providing <strong>High-Quality, Advanced Technical Education (BCA/BCS)</strong> alongside traditional streams, making it accessible and affordable. Our distinctiveness lies in blending academic rigor with practical, job-oriented skills, backed by a NAAC A+ grade, a rare achievement in the region. We promote digital literacy and entrepreneurship as core components of our teaching-learning process.
+                    </p>
+                    
+                    <a href="#" class="text-primary-light font-semibold hover:text-primary transition duration-150 inline-flex items-center mt-4">
+                        <span data-en="Download Full College Profile (PDF)" 
+                              data-mr="संपूर्ण महाविद्यालय प्रोफाइल डाउनलोड करा (PDF)">Download Full College Profile (PDF)</span>
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- BCA VIEW -->
+        <div id="bca-view" class="content-view hidden py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-extrabold text-primary mb-6 border-b-2 border-primary pb-2" 
+                    data-en="Bachelor of Computer Applications (BCA)" 
+                    data-mr="बॅचलर ऑफ कॉम्प्युटर ॲप्लिकेशन्स (बीसीए)">Bachelor of Computer Applications (BCA)</h2>
+                <div class="bg-white p-8 rounded-lg shadow-xl space-y-6">
+                    <h3 class="text-2xl font-semibold text-primary-light mb-4" 
+                        data-en="Program Overview" 
+                        data-mr="कार्यक्रम आढावा">Program Overview</h3>
+                    <p class="text-gray-700" 
+                       data-en="The BCA program is a professional course designed to produce skilled computer application specialists. It provides a strong foundation in modern programming languages, database management, web development, system management, and IT consulting."
+                       data-mr="बीसीए कार्यक्रम हा कुशल संगणक अनुप्रयोग तज्ञ तयार करण्यासाठी तयार केलेला व्यावसायिक अभ्यासक्रम आहे. हा आधुनिक प्रोग्रामिंग भाषा, डेटाबेस व्यवस्थापन, वेब डेव्हलपमेंट, सिस्टम व्यवस्थापन आणि आयटी सल्लामसलत यामध्ये मजबूत पाया प्रदान करतो.">
+                        The BCA program is a professional course designed to produce skilled computer application specialists. It provides a strong foundation in modern programming languages, database management, web development, system management, and IT consulting.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center pt-4">
+                        <div class="p-4 bg-gray-50 rounded-lg shadow-sm">
+                            <p class="text-xl font-bold text-primary" data-en="Duration" data-mr="कालावधी">Duration</p>
+                            <p class="text-gray-700" data-en="3 Years (6 Semesters)" data-mr="३ वर्षे (६ सेमिस्टर)">3 Years (6 Semesters)</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg shadow-sm">
+                            <p class="text-xl font-bold text-primary" data-en="Eligibility" data-mr="पात्रता">Eligibility</p>
+                            <p class="text-gray-700" data-en="H.S.C. (10+2) or equivalent" data-mr="उच्च माध्यमिक (१०+२) किंवा समकक्ष">H.S.C. (10+2) or equivalent</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg shadow-sm">
+                            <p class="text-xl font-bold text-primary" data-en="Intake" data-mr="प्रवेश क्षमता">Intake</p>
+                            <p class="text-gray-700" data-en="60 Seats" data-mr="६० जागा">60 Seats</p>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-2xl font-semibold text-primary-light pt-6" data-en="Career Prospects" data-mr="करिअर संधी">Career Prospects</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 pl-4">
+                        <li data-en="Software Developer/Engineer" data-mr="सॉफ्टवेअर डेव्हलपर/इंजिनिअर">Software Developer/Engineer</li>
+                        <li data-en="Web Developer" data-mr="वेब डेव्हलपर">Web Developer</li>
+                        <li data-en="Database Administrator" data-mr="डेटाबेस प्रशासक">Database Administrator</li>
+                        <li data-en="System Analyst" data-mr="सिस्टम विश्लेषक">System Analyst</li>
+                        <li data-en="Network Administrator" data-mr="नेटवर्क प्रशासक">Network Administrator</li>
+                    </ul>
+
+                    <div class="text-center pt-6">
+                        <a href="#" onclick="navigateTo('admission-process-view'); return false;" 
+                           class="inline-flex items-center px-8 py-3 bg-primary text-white font-bold rounded-full hover:bg-primary-light transition duration-300 shadow-lg">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            <span data-en="Apply Now for BCA" data-mr="बीसीए साठी आता अर्ज करा">Apply Now for BCA</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BCS VIEW -->
+        <div id="bcs-view" class="content-view hidden py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-extrabold text-primary mb-6 border-b-2 border-primary pb-2" 
+                    data-en="Bachelor of Computer Science (BCS)" 
+                    data-mr="बॅचलर ऑफ कॉम्प्युटर सायन्स (बीसीएस)">Bachelor of Computer Science (BCS)</h2>
+                <div class="bg-white p-8 rounded-lg shadow-xl space-y-6">
+                    <h3 class="text-2xl font-semibold text-primary-light mb-4" data-en="Program Overview" data-mr="कार्यक्रम आढावा">Program Overview</h3>
+                    <p class="text-gray-700" 
+                       data-en="The BCS program is an intensive three-year degree focusing on the theoretical foundations of computer science, mathematics, and programming. It is ideal for students aiming for advanced studies (like MCA/MSc) or research-oriented roles."
+                       data-mr="बीसीएस कार्यक्रम हा संगणक शास्त्र, गणित आणि प्रोग्रामिंगच्या सैद्धांतिक पायावर लक्ष केंद्रित करणारा तीन वर्षांचा गहन पदवी अभ्यासक्रम आहे. हा उच्च शिक्षण (जसे की MCA/MSc) किंवा संशोधन-केंद्रित भूमिकांसाठी इच्छुक विद्यार्थ्यांसाठी आदर्श आहे.">
+                        The BCS program is an intensive three-year degree focusing on the theoretical foundations of computer science, mathematics, and programming. It is ideal for students aiming for advanced studies (like MCA/MSc) or research-oriented roles.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center pt-4">
+                        <div class="p-4 bg-gray-50 rounded-lg shadow-sm">
+                            <p class="text-xl font-bold text-primary" data-en="Duration" data-mr="कालावधी">Duration</p>
+                            <p class="text-gray-700" data-en="3 Years (6 Semesters)" data-mr="३ वर्षे (६ सेमिस्टर)">3 Years (6 Semesters)</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg shadow-sm">
+                            <p class="text-xl font-bold text-primary" data-en="Eligibility" data-mr="पात्रता">Eligibility</p>
+                            <p class="text-gray-700" data-en="H.S.C. (10+2) with PCM or equivalent" data-mr="उच्च माध्यमिक (१०+२) PCM सह किंवा समकक्ष">H.S.C. (10+2) with PCM or equivalent</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-lg shadow-sm">
+                            <p class="text-xl font-bold text-primary" data-en="Intake" data-mr="प्रवेश क्षमता">Intake</p>
+                            <p class="text-gray-700" data-en="60 Seats" data-mr="६० जागा">60 Seats</p>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-2xl font-semibold text-primary-light pt-6" data-en="Career Prospects" data-mr="करिअर संधी">Career Prospects</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2 pl-4">
+                        <li data-en="System Programmer" data-mr="सिस्टम प्रोग्रामर">System Programmer</li>
+                        <li data-en="Data Scientist/Analyst (Entry-level)" data-mr="डेटा सायंटिस्ट/विश्लेषक (प्रवेश-स्तर)">Data Scientist/Analyst (Entry-level)</li>
+                        <li data-en="Further studies: MCA, MSc, MBA (IT)" data-mr="पुढील अभ्यास: एमसीए, एमएससी, एमबीए (आयटी)">Further studies: MCA, MSc, MBA (IT)</li>
+                        <li data-en="Software Tester" data-mr="सॉफ्टवेअर टेस्टर">Software Tester</li>
+                        <li data-en="Academic/Research Assistant" data-mr="शैक्षणिक/संशोधन सहाय्यक">Academic/Research Assistant</li>
+                    </ul>
+
+                    <div class="text-center pt-6">
+                        <a href="#" onclick="navigateTo('admission-process-view'); return false;" 
+                           class="inline-flex items-center px-8 py-3 bg-green-600 text-white font-bold rounded-full hover:bg-green-700 transition duration-300 shadow-lg">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            <span data-en="Apply Now for BCS" data-mr="बीसीएस साठी आता अर्ज करा">Apply Now for BCS</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FEES VIEW -->
+        <div id="fees-view" class="content-view hidden py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-extrabold text-primary mb-6 border-b-2 border-primary pb-2" data-en="Fees Structure (Academic Year 2024-25)" data-mr="शुल्क रचना (शैक्षणिक वर्ष 2024-25)">Fees Structure (Academic Year 2024-25)</h2>
+                <div class="bg-white p-8 rounded-lg shadow-xl space-y-6">
+                    <div class="overflow-x-auto shadow-md rounded-lg">
+                        <table class="w-full text-sm text-left text-gray-500 fees-table">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                                <tr>
+                                    <th scope="col" class="py-3 px-6" data-en="Fee Component" data-mr="शुल्क घटक">Fee Component</th>
+                                    <th scope="col" class="py-3 px-6" data-en="BCA (Per Year)" data-mr="BCA (प्रति वर्ष)">BCA (Per Year)</th>
+                                    <th scope="col" class="py-3 px-6" data-en="BCS (Per Year)" data-mr="BCS (प्रति वर्ष)">BCS (Per Year)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white border-b">
+                                    <td class="py-4 px-6 font-medium text-gray-900" data-en="Tuition Fee (College)" data-mr="शिक्षण शुल्क (महाविद्यालय)">Tuition Fee (College)</td>
+                                    <td class="py-4 px-6 text-gray-700">₹ 20,000</td>
+                                    <td class="py-4 px-6 text-gray-700">₹ 18,000</td>
+                                </tr>
+                                <tr class="bg-gray-50 border-b">
+                                    <td class="py-4 px-6 font-medium text-gray-900" data-en="Lab & Internet Charges" data-mr="प्रयोगशाळा आणि इंटरनेट शुल्क">Lab & Internet Charges</td>
+                                    <td class="py-4 px-6 text-gray-700">₹ 5,000</td>
+                                    <td class="py-4 px-6 text-gray-700">₹ 4,000</td>
+                                </tr>
+                                <tr class="bg-white border-b">
+                                    <td class="py-4 px-6 font-medium text-gray-900" data-en="Development Fee" data-mr="विकास शुल्क">Development Fee</td>
+                                    <td class="py-4 px-6 text-gray-700">₹ 3,000</td>
+                                    <td class="py-4 px-6 text-gray-700">₹ 3,000</td>
+                                </tr>
+                                <tr class="bg-gray-50">
+                                    <td class="py-4 px-6 font-medium text-gray-900" data-en="Exam Fee (University)" data-mr="परीक्षा शुल्क (विद्यापीठ)">Exam Fee (University)</td>
+                                    <td class="py-4 px-6 text-gray-700">₹ 2,000</td>
+                                    <td class="py-4 px-6 text-gray-700">₹ 2,000</td>
+                                </tr>
+                                <tr class="bg-gray-50 font-extrabold text-primary">
+                                    <td class="py-4 px-6" data-en="Total Fee (Approx.)" data-mr="एकूण शुल्क (अंदाजे)">Total Fee (Approx.)</td>
+                                    <td class="py-4 px-6">₹ 30,000</td>
+                                    <td class="py-4 px-6">₹ 27,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mt-6 p-4 bg-red-100 border-l-4 border-red-500 text-red-700 rounded-md">
+                        <p class="font-semibold" data-en="Note:" data-mr="टीप:">Note:</p>
+                        <p class="text-sm" data-en="Fees for reserved categories (SC/ST/OBC/VJNT) are subject to government scholarship schemes and university norms, potentially reducing the net fee significantly." data-mr="आरक्षित प्रवर्गांसाठी (SC/ST/OBC/VJNT) शुल्क सरकारी शिष्यवृत्ती योजना आणि विद्यापीठ नियमांच्या अधीन आहे, ज्यामुळे निव्वळ शुल्क लक्षणीयरीत्या कमी होऊ शकते.">Fees for reserved categories (SC/ST/OBC/VJNT) are subject to government scholarship schemes and university norms, potentially reducing the net fee significantly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- TIMETABLE VIEW - FIXED -->
+<div id="timetable-view" class="content-view hidden py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-extrabold text-primary mb-6 border-b-2 border-primary pb-2" 
+            data-en="Academic Time Table" 
+            data-mr="शैक्षणिक वेळापत्रक">Academic Time Table</h2>
+        <div class="bg-white p-8 rounded-lg shadow-xl space-y-6">
+            <p class="text-lg text-gray-700 mb-6" 
+               data-en="Download the latest Odd Semester (Sem I, III, V) time tables here:" 
+               data-mr="येथे नवीनतम विषम सत्र (सेम I, III, V) वेळापत्रक डाउनलोड करा:">Download the latest Odd Semester (Sem I, III, V) time tables here:</p>
+            <ul class="space-y-4">
+                <li class="p-4 bg-gray-50 border-l-4 border-primary rounded-md shadow-sm flex justify-between items-center">
+                    <p class="font-bold text-lg text-primary" 
+                       data-en="BCA Time Table (Odd Sem)" 
+                       data-mr="BCA वेळापत्रक (विषम सत्र)">BCA Time Table (Odd Sem)</p>
+                    <a href="https://example.com/timetable/bca-odd-sem-2024.pdf" target="_blank" class="text-primary hover:text-secondary" title="Download">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    </a>
+                </li>
+                <li class="p-4 bg-gray-50 border-l-4 border-primary rounded-md shadow-sm flex justify-between items-center">
+                    <p class="font-bold text-lg text-primary" 
+                       data-en="BCS Time Table (Odd Sem)" 
+                       data-mr="BCS वेळापत्रक (विषम सत्र)">BCS Time Table (Odd Sem)</p>
+                    <a href="https://example.com/timetable/bcs-odd-sem-2024.pdf" target="_blank" class="text-primary hover:text-secondary" title="Download">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    </a>
+                </li>
+            </ul>
+            <p class="text-lg text-gray-700 pt-6 mb-6" 
+               data-en="For other programs (B.A., B.Com., B.Sc.) time tables, please visit the general college notice board." 
+               data-mr="इतर अभ्यासक्रमांच्या (B.A., B.Com., B.Sc.) वेळापत्रकासाठी, कृपया महाविद्यालयाचा सामान्य सूचना फलक पहा.">For other programs (B.A., B.Com., B.Sc.) time tables, please visit the general college notice board.</p>
+        </div>
+    </div>
+</div>
+
+<!-- ADMISSION PROCESS VIEW -->
+<div id="admission-process-view" class="content-view hidden py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-extrabold text-primary mb-6 border-b-2 border-primary pb-2" 
+            data-en="Admission Process (2024-25)" 
+            data-mr="प्रवेश प्रक्रिया (2024-25)">Admission Process (2024-25)</h2>
+        <div class="bg-white p-8 rounded-lg shadow-xl space-y-8">
+            <p class="text-lg text-gray-700" 
+               data-en="Follow these simple steps to secure your admission into the BCA or BCS program for the academic year 2024-25:" 
+               data-mr="शैक्षणिक वर्ष 2024-25 साठी BCA किंवा BCS कार्यक्रमात तुमचा प्रवेश सुरक्षित करण्यासाठी या सोप्या चरणांचे अनुसरण करा:">Follow these simple steps to secure your admission into the BCA or BCS program for the academic year 2024-25:</p>
+
+            <div class="space-y-6">
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xl mr-4 shadow-md">1</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-primary mb-1" 
+                            data-en="Online Pre-Registration" 
+                            data-mr="ऑनलाइन पूर्व-नोंदणी">Online Pre-Registration</h3>
+                        <p class="text-gray-700" 
+                           data-en="Fill out the mandatory online pre-registration form. Upload necessary preliminary documents (Mark sheets, ID Proof)." 
+                           data-mr="अनिवार्य ऑनलाइन पूर्व-नोंदणी फॉर्म भरा. आवश्यक प्राथमिक दस्तऐवज अपलोड करा (मार्कशीट, ओळखपत्र).">Fill out the mandatory online pre-registration form. Upload necessary preliminary documents (Mark sheets, ID Proof).</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xl mr-4 shadow-md">2</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-primary mb-1" 
+                            data-en="Document Verification & Counseling" 
+                            data-mr="दस्तऐवज पडताळणी आणि समुपदेशन">Document Verification & Counseling</h3>
+                        <p class="text-gray-700" 
+                           data-en="Visit the college for physical document verification and a short counseling session with the HOD." 
+                           data-mr="प्रत्यक्ष दस्तऐवज पडताळणी आणि HOD सोबत लहान समुपदेशन सत्रासाठी महाविद्यालयाला भेट द्या.">Visit the college for physical document verification and a short counseling session with the HOD.</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xl mr-4 shadow-md">3</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-primary mb-1" 
+                            data-en="Fee Payment" 
+                            data-mr="शुल्क भरणा">Fee Payment</h3>
+                        <p class="text-gray-700" 
+                           data-en="Pay the required academic fees (can be done online or offline at the college counter)." 
+                           data-mr="आवश्यक शैक्षणिक शुल्क भरा (ऑनलाइन किंवा महाविद्यालय काउंटरवर ऑफलाइन करता येते).">Pay the required academic fees (can be done online or offline at the college counter).</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xl mr-4 shadow-md">4</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-primary mb-1" 
+                            data-en="Admission Confirmation" 
+                            data-mr="प्रवेश पुष्टी">Admission Confirmation</h3>
+                        <p class="text-gray-700" 
+                           data-en="Collect your official admission receipt and student ID. You are now officially enrolled!" 
+                           data-mr="तुमची अधिकृत प्रवेश पावती आणि विद्यार्थी ओळखपत्र घ्या. तुमची आता अधिकृतपणे नोंदणी झाली आहे!">Collect your official admission receipt and student ID. You are now officially enrolled!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-6 bg-gray-50 rounded-lg border-l-4 border-secondary-color">
+                <h3 class="text-2xl font-bold text-primary-light mb-2" 
+                    data-en="Required Documents" 
+                    data-mr="आवश्यक दस्तऐवज">Required Documents</h3>
+                <p class="text-gray-700 text-sm" 
+                   data-en="Please bring the following original documents and two sets of photocopies:" 
+                   data-mr="कृपया खालील मूळ दस्तऐवज आणि दोन झेरॉक्स प्रती आणा:">Please bring the following original documents and two sets of photocopies:</p>
+                <ul class="list-disc list-inside text-gray-700 text-sm mt-2 pl-4">
+                    <li data-en="H.S.C. (12th) Mark Sheet" data-mr="H.S.C. (12वी) मार्कशीट">H.S.C. (12th) Mark Sheet</li>
+                    <li data-en="S.S.C. (10th) Mark Sheet" data-mr="S.S.C. (10वी) मार्कशीट">S.S.C. (10th) Mark Sheet</li>
+                    <li data-en="Leaving/Transfer Certificate (T.C.)" data-mr="शाळा सोडल्याचा/बदली प्रमाणपत्र (T.C.)">Leaving/Transfer Certificate (T.C.)</li>
+                    <li data-en="Caste Certificate & Validity (for reserved categories)" data-mr="जात प्रमाणपत्र आणि वैधता (आरक्षित प्रवर्गांसाठी)">Caste Certificate & Validity (for reserved categories)</li>
+                    <li data-en="Non-Creamy Layer Certificate (if applicable)" data-mr="नॉन-क्रीमी लेयर प्रमाणपत्र (लागू असल्यास)">Non-Creamy Layer Certificate (if applicable)</li>
+                    <li data-en="Aadhaar Card Copy" data-mr="आधार कार्ड प्रत">Aadhaar Card Copy</li>
+                    <li data-en="Passport Size Photos (4 copies)" data-mr="पासपोर्ट आकाराचे फोटो (4 प्रती)">Passport Size Photos (4 copies)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FACULTY & STAFF VIEW -->
+<div id="faculty-staff-view" class="content-view hidden py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-extrabold text-primary mb-6 border-b-2 border-primary pb-2" 
+            data-en="Department of Computer Science & Applications Faculty" 
+            data-mr="संगणक शास्त्र आणि अनुप्रयोग विभाग शिक्षक">Department of Computer Science & Applications Faculty</h2>
+        <div class="bg-white p-8 rounded-lg shadow-xl">
+            <h3 class="text-2xl font-semibold text-secondary mb-4" 
+                data-en="Core Faculty" 
+                data-mr="मुख्य शिक्षक">Core Faculty</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- HOD Card -->
+                <div class="bg-primary text-white rounded-lg p-4 text-center shadow-lg transform hover:scale-105 transition duration-300">
+                    <img src="./assests/fac1.jpeg" alt="Dr. S. S. Patil" class="w-28 h-28 rounded-full mx-auto mb-3 object-cover border-4 border-white">
+                    <p class="font-bold text-xl" 
+                       data-en="Dr. S. S. Patil" 
+                       data-mr="डॉ. एस. एस. पाटील">Dr. S. S. Patil</p>
+                    <p class="text-sm font-semibold" 
+                       data-en="Head of Department (HOD)" 
+                       data-mr="विभाग प्रमुख (HOD)">Head of Department (HOD)</p>
+                    <p class="text-xs mt-1" 
+                       data-en="M.Sc., MCA, M.Phil., Ph.D." 
+                       data-mr="एम.एस्सी., एमसीए, एम.फिल., पीएच.डी.">M.Sc., MCA, M.Phil., Ph.D.</p>
+                    <p class="text-xs mt-1" 
+                       data-en="Specialization: Data Mining & AI" 
+                       data-mr="विशेषज्ञता: डेटा मायनिंग आणि एआय">Specialization: Data Mining & AI</p>
+                </div>
+                
+                <!-- Faculty 2 -->
+                <div class="bg-gray-50 rounded-lg p-4 text-center shadow-md">
+                    <img src="./assests/fac2.jpeg" alt="Prof. R. P. Deshmukh" class="w-24 h-24 rounded-full mx-auto mb-3 object-cover border-4 border-gray-200">
+                    <p class="font-bold text-lg text-primary" 
+                       data-en="Prof. R. P. Deshmukh" 
+                       data-mr="प्रा. आर. पी. देशमुख">Prof. R. P. Deshmukh</p>
+                    <p class="text-sm text-gray-600 font-semibold" 
+                       data-en="Assistant Professor" 
+                       data-mr="सहाय्यक प्राध्यापक">Assistant Professor</p>
+                    <p class="text-xs text-gray-500 mt-1" 
+                       data-en="MCA, M.Phil., NET" 
+                       data-mr="एमसीए, एम.फिल., नेट">MCA, M.Phil., NET</p>
+                    <p class="text-xs text-gray-500 mt-1" 
+                       data-en="Specialization: Web Technology & Python" 
+                       data-mr="विशेषज्ञता: वेब तंत्रज्ञान आणि पायथन">Specialization: Web Technology & Python</p>
+                </div>
+
+                <!-- Faculty 3 -->
+                <div class="bg-gray-50 rounded-lg p-4 text-center shadow-md">
+                    <img src="./assests/fac3.jpeg" alt="Prof. G. K. Shinde" class="w-24 h-24 rounded-full mx-auto mb-3 object-cover border-4 border-gray-200">
+                    <p class="font-bold text-lg text-primary" 
+                       data-en="Prof. G. K. Shinde" 
+                       data-mr="प्रा. जी. के. शिंदे">Prof. G. K. Shinde</p>
+                    <p class="text-sm text-gray-600 font-semibold" 
+                       data-en="Assistant Professor" 
+                       data-mr="सहाय्यक प्राध्यापक">Assistant Professor</p>
+                    <p class="text-xs text-gray-500 mt-1" 
+                       data-en="M.Sc. (IT)" 
+                       data-mr="एम.एस्सी. (आयटी)">M.Sc. (IT)</p>
+                    <p class="text-xs text-gray-500 mt-1" 
+                       data-en="Specialization: DBMS & SQL" 
+                       data-mr="विशेषज्ञता: डीबीएमएस आणि एसक्यूएल">Specialization: DBMS & SQL</p>
+                </div>
+
+                <!-- Faculty 4 -->
+                <div class="bg-gray-50 rounded-lg p-4 text-center shadow-md">
+                    <img src="./assests/fac4.jpeg" alt="Prof. M. B. Shaikh" class="w-24 h-24 rounded-full mx-auto mb-3 object-cover border-4 border-gray-200">
+                    <p class="font-bold text-lg text-primary" 
+                       data-en="Prof. M. B. Shaikh" 
+                       data-mr="प्रा. एम. बी. शेख">Prof. M. B. Shaikh</p>
+                    <p class="text-sm text-gray-600 font-semibold" 
+                       data-en="Assistant Professor" 
+                       data-mr="सहाय्यक प्राध्यापक">Assistant Professor</p>
+                    <p class="text-xs text-gray-500 mt-1" 
+                       data-en="M.C.A." 
+                       data-mr="एम.सी.ए.">M.C.A.</p>
+                    <p class="text-xs text-gray-500 mt-1" 
+                       data-en="Specialization: Operating Systems" 
+                       data-mr="विशेषज्ञता: ऑपरेटिंग सिस्टम्स">Specialization: Operating Systems</p>
+                </div>
+            </div>
+            
+            <h3 class="text-2xl font-semibold text-secondary pt-6 mb-4" 
+                data-en="Administrative & Lab Staff" 
+                data-mr="प्रशासकीय आणि प्रयोगशाळा कर्मचारी">Administrative & Lab Staff</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Staff 1 -->
+                <div class="bg-gray-50 rounded-lg p-4 shadow-md border-l-4 border-secondary">
+                    <p class="font-bold text-lg text-primary" 
+                       data-en="Mr. P. V. Jadhav" 
+                       data-mr="श्री. पी. व्ही. जाधव">Mr. P. V. Jadhav</p>
+                    <p class="text-sm text-gray-600" 
+                       data-en="Department Coordinator (BCA)" 
+                       data-mr="विभाग समन्वयक (बीसीए)">Department Coordinator (BCA)</p>
+                    <p class="text-xs text-gray-500 mt-1" 
+                       data-en="Key responsibilities: Admissions, Records" 
+                       data-mr="मुख्य जबाबदाऱ्या: प्रवेश, अभिलेख">Key responsibilities: Admissions, Records</p>
+                </div>
+                <!-- Staff 2 -->
+                <div class="bg-gray-50 rounded-lg p-4 shadow-md border-l-4 border-secondary">
+                    <p class="font-bold text-lg text-primary" 
+                       data-en="Mr. A. N. More" 
+                       data-mr="श्री. ए. एन. मोरे">Mr. A. N. More</p>
+                    <p class="text-sm text-gray-600" 
+                       data-en="Senior Lab Assistant" 
+                       data-mr="वरिष्ठ प्रयोगशाळा सहाय्यक">Senior Lab Assistant</p>
+                    <p class="text-xs text-gray-500 mt-1" 
+                       data-en="Key responsibilities: Lab Maintenance, Technical Support" 
+                       data-mr="मुख्य जबाबदाऱ्या: प्रयोगशाळा देखभाल, तांत्रिक सहाय्य">Key responsibilities: Lab Maintenance, Technical Support</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- COMMITTEES VIEW -->
+<div id="committees-view" class="content-view hidden py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-extrabold text-primary mb-6 border-b-2 border-primary pb-2" 
+            data-en="Committees and Cells" 
+            data-mr="समित्या आणि सेल">Committees and Cells</h2>
+        <div class="bg-white p-8 rounded-lg shadow-xl space-y-6">
+            <p class="text-lg text-gray-700" 
+               data-en="The college operates through various statutory and non-statutory committees to ensure smooth academic and administrative functioning, and to promote student welfare and quality research."
+               data-mr="महाविद्यालय सुरळीत शैक्षणिक आणि प्रशासकीय कामकाज सुनिश्चित करण्यासाठी आणि विद्यार्थी कल्याण आणि गुणवत्तापूर्ण संशोधनाला प्रोत्साहन देण्यासाठी विविध वैधानिक आणि गैर-वैधानिक समित्यांद्वारे कार्य करते.">
+                The college operates through various statutory and non-statutory committees to ensure smooth academic and administrative functioning, and to promote student welfare and quality research.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- IQAC Committee -->
+                <div class="border p-6 rounded-lg shadow-sm border-l-4 border-primary">
+                    <h3 class="text-xl font-bold text-primary mb-2 flex items-center">
+                        <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.103a9 9 0 11-12.625 12.625 9 9 0 0112.625-12.625z"></path></svg>
+                        <span data-en="Internal Quality Assurance Cell (IQAC)" 
+                              data-mr="अंतर्गत गुणवत्ता हमी कक्ष (IQAC)">Internal Quality Assurance Cell (IQAC)</span>
+                    </h3>
+                    <p class="text-gray-700 text-sm mb-3" 
+                       data-en="Responsible for continuous monitoring and improvement of institutional quality parameters."
+                       data-mr="संस्थात्मक गुणवत्ता मापदंडांचे सतत निरीक्षण आणि सुधारणा करण्यासाठी जबाबदार.">
+                        Responsible for continuous monitoring and improvement of institutional quality parameters.
+                    </p>
+                    <ul class="list-disc list-inside text-gray-600 text-sm pl-4">
+                        <li><span data-en="Chairperson: Dr. Ramkishan M. Manjre (Principal)" 
+                                  data-mr="अध्यक्ष: डॉ. रामकिशन एम. मांजरे (प्राचार्य)">Chairperson: Dr. Ramkishan M. Manjre (Principal)</span></li>
+                        <li><span data-en="Coordinator: Dr. S. S. Patil" 
+                                  data-mr="समन्वयक: डॉ. एस. एस. पाटील">Coordinator: Dr. S. S. Patil</span></li>
+                    </ul>
+                </div>
+                
+                <!-- Training & Placement Cell -->
+                <div class="border p-6 rounded-lg shadow-sm border-l-4 border-secondary">
+                    <h3 class="text-xl font-bold text-secondary mb-2 flex items-center">
+                        <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.864 23.864 0 0112 15.75c-2.35 0-4.646-.35-6.855-1.002M12 21a9 9 0 100-18 9 9 0 000 18z"></path></svg>
+                        <span data-en="Training & Placement Cell" 
+                              data-mr="प्रशिक्षण आणि नियुक्ती कक्ष">Training & Placement Cell</span>
+                    </h3>
+                    <p class="text-gray-700 text-sm mb-3" 
+                       data-en="Organizes industry training, workshops, and coordinates placement drives and career counseling."
+                       data-mr="उद्योग प्रशिक्षण, कार्यशाळा आयोजित करते आणि नियुक्ती मोहिमा आणि करिअर समुपदेशन समन्वयित करते.">
+                        Organizes industry training, workshops, and coordinates placement drives and career counseling.
+                    </p>
+                    <ul class="list-disc list-inside text-gray-600 text-sm pl-4">
+                        <li><span data-en="Coordinator: Prof. R. P. Deshmukh" 
+                                  data-mr="समन्वयक: प्रा. आर. पी. देशमुख">Coordinator: Prof. R. P. Deshmukh</span></li>
+                        <li><span data-en="Activities: Mock Interviews, Resume Building, Industry Tours." 
+                                  data-mr="उपक्रम: मॉक मुलाखती, रेझ्युमे तयार करणे, उद्योग भेटी.">Activities: Mock Interviews, Resume Building, Industry Tours.</span></li>
+                    </ul>
+                </div>
+
+                <!-- Research and Development Cell -->
+                <div class="border p-6 rounded-lg shadow-sm border-l-4 border-gray-500">
+                    <h3 class="text-xl font-bold text-gray-700 mb-2 flex items-center">
+                        <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v18m-7-6h14"></path></svg>
+                        <span data-en="Research and Development Cell" 
+                              data-mr="संशोधन आणि विकास कक्ष">Research and Development Cell</span>
+                    </h3>
+                    <p class="text-gray-700 text-sm mb-3" 
+                       data-en="Promotes and facilitates research activities among faculty and students, manages minor/major research projects."
+                       data-mr="शिक्षक आणि विद्यार्थ्यांमधील संशोधन उपक्रमांना प्रोत्साहन देते आणि सुलभ करते, लघु/प्रमुख संशोधन प्रकल्प व्यवस्थापित करते.">
+                        Promotes and facilitates research activities among faculty and students, manages minor/major research projects.
+                    </p>
+                    <ul class="list-disc list-inside text-gray-600 text-sm pl-4">
+                        <li><span data-en="Coordinator: Prof. G. K. Shinde" 
+                                  data-mr="समन्वयक: प्रा. जी. के. शिंदे">Coordinator: Prof. G. K. Shinde</span></li>
+                        <li><span data-en="Focus: Interdisciplinary research, publication support." 
+                                  data-mr="लक्ष केंद्र: आंतरविद्याशाखीय संशोधन, प्रकाशन सहाय्य.">Focus: Interdisciplinary research, publication support.</span></li>
+                    </ul>
+                </div>
+
+                <!-- Anti-Ragging Cell -->
+                <div class="border p-6 rounded-lg shadow-sm border-l-4 border-red-500">
+                    <h3 class="text-xl font-bold text-red-500 mb-2 flex items-center">
+                        <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <span data-en="Anti-Ragging Cell & Grievance Redressal" 
+                              data-mr="रॅगिंग विरोधी कक्ष आणि तक्रार निवारण">Anti-Ragging Cell & Grievance Redressal</span>
+                    </h3>
+                    <p class="text-gray-700 text-sm mb-3" 
+                       data-en="Ensures a safe, harassment-free environment and provides a mechanism for addressing student and employee grievances."
+                       data-mr="सुरक्षित, छळमुक्त वातावरण सुनिश्चित करते आणि विद्यार्थी आणि कर्मचाऱ्यांच्या तक्रारींचे निवारण करण्यासाठी यंत्रणा प्रदान करते.">
+                        Ensures a safe, harassment-free environment and provides a mechanism for addressing student and employee grievances.
+                    </p>
+                    <ul class="list-disc list-inside text-gray-600 text-sm pl-4">
+                        <li><span data-en="Key Contact: Dr. S. S. Patil (Nodal Officer)" 
+                                  data-mr="मुख्य संपर्क: डॉ. एस. एस. पाटील (नोडल अधिकारी)">Key Contact: Dr. S. S. Patil (Nodal Officer)</span></li>
+                    </ul>
+                </div>
+
+                <!-- Women's Grievance Cell -->
+                <div class="border p-6 rounded-lg shadow-sm border-l-4 border-pink-500">
+                    <h3 class="text-xl font-bold text-pink-500 mb-2 flex items-center">
+                        <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                        <span data-en="Women's Grievance Cell" 
+                              data-mr="महिला तक्रार निवारण कक्ष">Women's Grievance Cell</span>
+                    </h3>
+                    <p class="text-gray-700 text-sm mb-3" 
+                       data-en="Addresses issues related to women students and staff, ensures gender equality and a safe campus environment."
+                       data-mr="महिला विद्यार्थी आणि कर्मचाऱ्यांशी संबंधित समस्यांचे निराकरण करते, लैंगिक समानता आणि सुरक्षित परिसर वातावरण सुनिश्चित करते.">
+                        Addresses issues related to women students and staff, ensures gender equality and a safe campus environment.
+                    </p>
+                    <ul class="list-disc list-inside text-gray-600 text-sm pl-4">
+                        <li><span data-en="Coordinator: Women Faculty Representative" 
+                                  data-mr="समन्वयक: महिला शिक्षक प्रतिनिधी">Coordinator: Women Faculty Representative</span></li>
+                    </ul>
+                </div>
+
+                <!-- NSS Unit -->
+                <div class="border p-6 rounded-lg shadow-sm border-l-4 border-green-500">
+                    <h3 class="text-xl font-bold text-green-600 mb-2 flex items-center">
+                        <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        <span data-en="National Service Scheme (NSS) Unit" 
+                              data-mr="राष्ट्रीय सेवा योजना (NSS) युनिट">National Service Scheme (NSS) Unit</span>
+                    </h3>
+                    <p class="text-gray-700 text-sm mb-3" 
+                       data-en="Organizes community service activities, blood donation camps, village adoption programs, and social awareness campaigns."
+                       data-mr="समुदाय सेवा उपक्रम, रक्तदान शिबिरे, गाव दत्तक कार्यक्रम आणि सामाजिक जागरूकता मोहिमा आयोजित करते.">
+                        Organizes community service activities, blood donation camps, village adoption programs, and social awareness campaigns.
+                    </p>
+                    <ul class="list-disc list-inside text-gray-600 text-sm pl-4">
+                        <li><span data-en="Program Officer: Designated Faculty" 
+                                  data-mr="कार्यक्रम अधिकारी: नियुक्त शिक्षक">Program Officer: Designated Faculty</span></li>
+                        <li><span data-en="Activities: Tree Plantation, Cleanliness Drives, Health Camps" 
+                                  data-mr="उपक्रम: वृक्षारोपण, स्वच्छता मोहिम, आरोग्य शिबिरे">Activities: Tree Plantation, Cleanliness Drives, Health Camps</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Other Committees -->
+            <div class="mt-8 p-6 bg-blue-50 rounded-lg border border-blue-200">
+                <h4 class="text-lg font-bold text-primary mb-3" 
+                    data-en="📋 Other Important Committees" 
+                    data-mr="📋 इतर महत्त्वाच्या समित्या">📋 Other Important Committees</h4>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                    <div class="bg-white p-3 rounded-md shadow-sm">
+                        <p class="font-semibold text-gray-700" data-en="Library Committee" data-mr="ग्रंथालय समिती">Library Committee</p>
+                    </div>
+                    <div class="bg-white p-3 rounded-md shadow-sm">
+                        <p class="font-semibold text-gray-700" data-en="Examination Committee" data-mr="परीक्षा समिती">Examination Committee</p>
+                    </div>
+                    <div class="bg-white p-3 rounded-md shadow-sm">
+                        <p class="font-semibold text-gray-700" data-en="Discipline Committee" data-mr="शिस्त समिती">Discipline Committee</p>
+                    </div>
+                    <div class="bg-white p-3 rounded-md shadow-sm">
+                        <p class="font-semibold text-gray-700" data-en="Sports Committee" data-mr="क्रीडा समिती">Sports Committee</p>
+                    </div>
+                    <div class="bg-white p-3 rounded-md shadow-sm">
+                        <p class="font-semibold text-gray-700" data-en="Cultural Committee" data-mr="सांस्कृतिक समिती">Cultural Committee</p>
+                    </div>
+                    <div class="bg-white p-3 rounded-md shadow-sm">
+                        <p class="font-semibold text-gray-700" data-en="Student Council" data-mr="विद्यार्थी परिषद">Student Council</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PDF LINKS VIEW -->
+<div id="pdf-links-view" class="content-view hidden py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-extrabold text-primary mb-6 border-b-2 border-primary pb-2" 
+            data-en="Syllabus & Scholarship Links" 
+            data-mr="अभ्यासक्रम आणि शिष्यवृत्ती लिंक्स">Syllabus & Scholarship Links</h2>
+        <div class="bg-white p-8 rounded-lg shadow-xl space-y-6">
+            <h3 class="text-2xl font-semibold text-secondary mb-4" 
+                data-en="Syllabus Downloads (CBCS Pattern)" 
+                data-mr="अभ्यासक्रम डाउनलोड (CBCS पॅटर्न)">Syllabus Downloads (CBCS Pattern)</h3>
+            <ul class="space-y-4">
+                <li class="p-4 bg-gray-50 border-l-4 border-primary rounded-md shadow-sm flex justify-between items-center">
+                    <p class="font-bold text-lg text-primary" 
+                       data-en="BCA Syllabus (2024-25)" 
+                       data-mr="BCA अभ्यासक्रम (2024-25)">BCA Syllabus (2024-25)</p>
+                    <a href="https://example.com/syllabus/bca-cbcs-2024.pdf" target="_blank" class="text-primary hover:text-secondary">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    </a>
+                </li>
+                <li class="p-4 bg-gray-50 border-l-4 border-primary rounded-md shadow-sm flex justify-between items-center">
+                    <p class="font-bold text-lg text-primary" 
+                       data-en="BCS Syllabus (2024-25)" 
+                       data-mr="BCS अभ्यासक्रम (2024-25)">BCS Syllabus (2024-25)</p>
+                    <a href="https://example.com/syllabus/bcs-cbcs-2024.pdf" target="_blank" class="text-primary hover:text-secondary">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    </a>
+                </li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold text-secondary mt-8 mb-4" 
+                data-en="Scholarship Documents" 
+                data-mr="शिष्यवृत्ती दस्तऐवज">Scholarship Documents</h3>
+            <ul class="space-y-4">
+                <li class="p-4 bg-gray-50 border-l-4 border-primary rounded-md shadow-sm flex justify-between items-center">
+                    <p class="font-bold text-lg text-primary" 
+                       data-en="Govt. Scholarship Application Guidelines (2024-25)" 
+                       data-mr="सरकारी शिष्यवृत्ती अर्ज मार्गदर्शक तत्त्वे (2024-25)">Govt. Scholarship Application Guidelines (2024-25)</p>
+                    <a href="https://example.com/scholarship/scholarship-guide-2024.pdf" target="_blank" class="text-primary hover:text-secondary">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    </a>
+                </li>
+                <li class="p-4 bg-gray-50 border-l-4 border-primary rounded-md shadow-sm flex justify-between items-center">
+                    <p class="font-bold text-lg text-primary" 
+                       data-en="Required Documents Checklist for Freeship/Scholarship" 
+                       data-mr="फ्रीशिप/शिष्यवृत्तीसाठी आवश्यक दस्तऐवज चेकलिस्ट">Required Documents Checklist for Freeship/Scholarship</p>
+                    <a href="https://example.com/scholarship/document-checklist.pdf" target="_blank" class="text-primary hover:text-secondary">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- RESEARCH VIEW -->
+<div id="research-view" class="content-view hidden py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-extrabold text-primary mb-6 border-b-2 border-primary pb-2" 
+            data-en="Research and Publications" 
+            data-mr="संशोधन आणि प्रकाशने">Research and Publications</h2>
+        <div class="bg-white p-8 rounded-lg shadow-xl space-y-6">
+            <p class="text-lg text-gray-700" 
+               data-en="The Department of Computer Science strongly encourages research activities among faculty and students. We focus on emerging areas of technology, including Data Science, Cloud Computing, and Mobile Application Development." 
+               data-mr="संगणक विज्ञान विभाग शिक्षक आणि विद्यार्थ्यांमध्ये संशोधन क्रियाकलापांना जोरदार प्रोत्साहन देतो. आम्ही डेटा सायन्स, क्लाउड कंप्युटिंग आणि मोबाइल अॅप्लिकेशन डेव्हलपमेंट यासह तंत्रज्ञानाच्या उदयोन्मुख क्षेत्रांवर लक्ष केंद्रित करतो.">The Department of Computer Science strongly encourages research activities among faculty and students. We focus on emerging areas of technology, including Data Science, Cloud Computing, and Mobile Application Development.</p>
+
+            <h3 class="text-2xl font-semibold text-secondary pt-4" 
+                data-en="Research Highlights" 
+                data-mr="संशोधन ठळक मुद्दे">Research Highlights</h3>
+            <ul class="list-disc list-inside text-gray-700 space-y-2 pl-4">
+                <li>
+                    <strong data-en="Ph.D. Holders:" data-mr="पीएच.डी. धारक:">Ph.D. Holders:</strong> 
+                    <span data-en="27 faculty members across the college hold Ph.D. degrees." data-mr="महाविद्यालयातील 27 शिक्षक सदस्यांकडे पीएच.डी. पदवी आहे.">27 faculty members across the college hold Ph.D. degrees.</span>
+                </li>
+                <li>
+                    <strong data-en="Research Guides:" data-mr="संशोधन मार्गदर्शक:">Research Guides:</strong> 
+                    <span data-en="7 faculty members are recognized as Ph.D. research guides." data-mr="7 शिक्षक सदस्य पीएच.डी. संशोधन मार्गदर्शक म्हणून मान्यताप्राप्त आहेत.">7 faculty members are recognized as Ph.D. research guides.</span>
+                </li>
+                <li>
+                    <strong data-en="Student Projects:" data-mr="विद्यार्थी प्रकल्प:">Student Projects:</strong> 
+                    <span data-en="Mandatory research/development projects in the final year of BCA/BCS." data-mr="BCA/BCS च्या अंतिम वर्षात अनिवार्य संशोधन/विकास प्रकल्प.">Mandatory research/development projects in the final year of BCA/BCS.</span>
+                </li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold text-secondary pt-4" 
+                data-en="Recent Publications (IT Department)" 
+                data-mr="अलीकडील प्रकाशने (आयटी विभाग)">Recent Publications (IT Department)</h3>
+            <div class="space-y-4">
+                <div class="p-4 bg-gray-50 rounded-md border-l-4 border-primary">
+                    <p class="font-bold text-primary">"A Study on Optimizing Data Mining Algorithms for Cloud Environments"</p>
+                    <p class="text-sm text-gray-700" 
+                       data-en="Authors: Dr. S. S. Patil, Prof. R. P. Deshmukh. | Journal: International Journal of Computer Science (2023)" 
+                       data-mr="लेखक: डॉ. एस. एस. पाटील, प्रा. आर. पी. देशमुख. | जर्नल: इंटरनॅशनल जर्नल ऑफ कंप्युटर सायन्स (2023)">Authors: Dr. S. S. Patil, Prof. R. P. Deshmukh. | Journal: International Journal of Computer Science (2023)</p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-md border-l-4 border-primary">
+                    <p class="font-bold text-primary">"Security Analysis of Modern Web Application Frameworks (PHP vs. Python)"</p>
+                    <p class="text-sm text-gray-700" 
+                       data-en="Authors: Prof. R. P. Deshmukh. | Conference: National Conference on Information Technology (2024)" 
+                       data-mr="लेखक: प्रा. आर. पी. देशमुख. | परिषद: नॅशनल कॉन्फरन्स ऑन इन्फॉर्मेशन टेक्नॉलॉजी (2024)">Authors: Prof. R. P. Deshmukh. | Conference: National Conference on Information Technology (2024)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CURRICULA VIEW -->
+<div id="curricula-view" class="content-view hidden py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-extrabold text-primary mb-6 border-b-2 border-primary pb-2" 
+            data-en="Academic Curricula & Subjects" 
+            data-mr="शैक्षणिक अभ्यासक्रम आणि विषय">Academic Curricula & Subjects</h2>
+        <div class="bg-white p-8 rounded-lg shadow-xl space-y-6">
+            <h3 class="text-2xl font-semibold text-secondary mb-4" 
+                data-en="BCA Curriculum Structure (CBCS)" 
+                data-mr="BCA अभ्यासक्रम रचना (CBCS)">BCA Curriculum Structure (CBCS)</h3>
+            <ul class="space-y-4 text-gray-700 pl-4">
+                <li class="p-4 bg-gray-50 rounded-md border-l-4 border-primary">
+                    <p class="font-bold text-primary" data-en="Year I (Sem I & II):" data-mr="वर्ष I (सेम I आणि II):">Year I (Sem I & II):</p>
+                    <p class="text-sm" data-en="Introduction to Programming (C), Discrete Mathematics, Digital Electronics, Communication Skills, Operating System Fundamentals." data-mr="प्रोग्रामिंगचा परिचय (C), विवेकी गणित, डिजिटल इलेक्ट्रॉनिक्स, संवाद कौशल्ये, ऑपरेटिंग सिस्टम मूलभूत.">Introduction to Programming (C), Discrete Mathematics, Digital Electronics, Communication Skills, Operating System Fundamentals.</p>
+                </li>
+                <li class="p-4 bg-gray-50 rounded-md border-l-4 border-primary">
+                    <p class="font-bold text-primary" data-en="Year II (Sem III & IV):" data-mr="वर्ष II (सेम III आणि IV):">Year II (Sem III & IV):</p>
+                    <p class="text-sm" data-en="Data Structures, Object-Oriented Programming (C++), DBMS, Computer Networks, Software Engineering, Linux Administration." data-mr="डेटा स्ट्रक्चर्स, ऑब्जेक्ट-ओरिएंटेड प्रोग्रामिंग (C++), DBMS, संगणक नेटवर्क, सॉफ्टवेअर इंजिनिअरिंग, लिनक्स प्रशासन.">Data Structures, Object-Oriented Programming (C++), DBMS, Computer Networks, Software Engineering, Linux Administration.</p>
+                </li>
+                <li class="p-4 bg-gray-50 rounded-md border-l-4 border-primary">
+                    <p class="font-bold text-primary" data-en="Year III (Sem V & VI):" data-mr="वर्ष III (सेम V आणि VI):">Year III (Sem V & VI):</p>
+                    <p class="text-sm" data-en="Web Technology (PHP/Python), Java Programming, Data Science Fundamentals, Cloud Computing, Project Work & Internships." data-mr="वेब तंत्रज्ञान (PHP/Python), Java प्रोग्रामिंग, डेटा सायन्स मूलभूत, क्लाउड कंप्युटिंग, प्रकल्प कार्य आणि इंटर्नशिप.">Web Technology (PHP/Python), Java Programming, Data Science Fundamentals, Cloud Computing, Project Work & Internships.</p>
+                </li>
+            </ul>
+
+            <h3 class="text-2xl font-semibold text-secondary pt-6 mb-4" 
+                data-en="BCS Curriculum Structure (CBCS)" 
+                data-mr="BCS अभ्यासक्रम रचना (CBCS)">BCS Curriculum Structure (CBCS)</h3>
+            <ul class="space-y-4 text-gray-700 pl-4">
+                <li class="p-4 bg-gray-50 rounded-md border-l-4 border-secondary">
+                    <p class="font-bold text-secondary" data-en="Year I (Sem I & II):" data-mr="वर्ष I (सेम I आणि II):">Year I (Sem I & II):</p>
+                    <p class="text-sm" data-en="Foundational Mathematics, Digital Logic, Programming in C, Statistical Methods, Core Physics/Electronics." data-mr="पायाभूत गणित, डिजिटल लॉजिक, C मध्ये प्रोग्रामिंग, सांख्यिकीय पद्धती, मुख्य भौतिकशास्त्र/इलेक्ट्रॉनिक्स.">Foundational Mathematics, Digital Logic, Programming in C, Statistical Methods, Core Physics/Electronics.</p>
+                </li>
+                <li class="p-4 bg-gray-50 rounded-md border-l-4 border-secondary">
+                    <p class="font-bold text-secondary" data-en="Year II (Sem III & IV):" data-mr="वर्ष II (सेम III आणि IV):">Year II (Sem III & IV):</p>
+                    <p class="text-sm" data-en="Advanced Data Structures, OOP with Java, Database Systems, Computer Architecture, Advanced Calculus & Algebra." data-mr="प्रगत डेटा स्ट्रक्चर्स, Java सह OOP, डेटाबेस सिस्टम, संगणक आर्किटेक्चर, प्रगत कॅल्क्युलस आणि बीजगणित.">Advanced Data Structures, OOP with Java, Database Systems, Computer Architecture, Advanced Calculus & Algebra.</p>
+                </li>
+                <li class="p-4 bg-gray-50 rounded-md border-l-4 border-secondary">
+                    <p class="font-bold text-secondary" data-en="Year III (Sem V & VI):" data-mr="वर्ष III (सेम V आणि VI):">Year III (Sem V & VI):</p>
+                    <p class="text-sm" data-en="Computer Graphics, Operating System Internals, Web Programming, Data Communication, Elective Stream, Research Project." data-mr="संगणक ग्राफिक्स, ऑपरेटिंग सिस्टम इंटर्नल्स, वेब प्रोग्रामिंग, डेटा कम्युनिकेशन, इलेक्टिव्ह स्ट्रीम, संशोधन प्रकल्प.">Computer Graphics, Operating System Internals, Web Programming, Data Communication, Elective Stream, Research Project.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer id="contact-footer" class="bg-gray-800 text-white py-12 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            
+            <div>
+                <h3 class="text-xl font-bold text-primary mb-4" 
+                    data-en="Contact Info" 
+                    data-mr="संपर्क माहिती">Contact Info</h3>
+                <address class="not-italic space-y-2 text-gray-400">
+                    <p class="flex items-start">
+                        <svg class="w-5 h-5 mr-2 mt-1 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        <span data-en="Shivaji Mahavidyalaya, Udgir, District: Latur, State: Maharashtra, Pin code: 413517" 
+                              data-mr="शिवाजी महाविद्यालय, उदगीर, जिल्हा: लातूर, राज्य: महाराष्ट्र, पिन कोड: 413517">Shivaji Mahavidyalaya, Udgir, District: Latur, State: Maharashtra, Pin code: 413517</span>
+                    </p>
+                    <p class="flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                        02385-256116 | 9850757663
+                    </p>
+                    <p class="flex items-center">
+                        <svg class="w-5 h-5 mr-2 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-2 4v7a2 2 0 01-2 2H5a2 2 0 01-2-2v-7"></path></svg>
+                        manjareramkishan@gmail.com
+                    </p>
+                </address>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-bold text-primary mb-4" 
+                    data-en="Quick Links" 
+                    data-mr="जलद दुवे">Quick Links</h3>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="#" onclick="navigateTo('fees-view'); return false;" class="hover:text-primary transition duration-150" data-en="Fees Structure" data-mr="शुल्क रचना">Fees Structure</a></li>
+                    <li><a href="#" onclick="navigateTo('admission-process-view'); return false;" class="hover:text-primary transition duration-150" data-en="Admission Process" data-mr="प्रवेश प्रक्रिया">Admission Process</a></li>
+                    <li><a href="#" onclick="navigateTo('pdf-links-view'); return false;" class="hover:text-primary transition duration-150" data-en="Syllabus & Downloads" data-mr="अभ्यासक्रम आणि डाउनलोड">Syllabus & Downloads</a></li>
+                    <li><a href="#" onclick="navigateTo('governance-view'); return false;" class="hover:text-primary transition duration-150" data-en="Governance" data-mr="प्रशासन">Governance</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-bold text-primary mb-4" 
+                    data-en="Programs" 
+                    data-mr="अभ्यासक्रम">Programs</h3>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="#" onclick="navigateTo('bca-view'); return false;" class="hover:text-primary transition duration-150">BCA</a></li>
+                    <li><a href="#" onclick="navigateTo('bcs-view'); return false;" class="hover:text-primary transition duration-150">BCS</a></li>
+                    <li><a href="#" onclick="navigateTo('curricula-view'); return false;" class="hover:text-primary transition duration-150" data-en="Academic Curricula" data-mr="शैक्षणिक अभ्यासक्रम">Academic Curricula</a></li>
+                    <li><a href="#" onclick="navigateTo('faculty-staff-view'); return false;" class="hover:text-primary transition duration-150" data-en="Faculty & Staff" data-mr="शिक्षक आणि कर्मचारी">Faculty & Staff</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-bold text-primary mb-4" 
+                    data-en="Location Map" 
+                    data-mr="स्थान नकाशा">Location Map</h3>
+                <div class="h-48 bg-gray-700 rounded-lg overflow-hidden shadow-lg">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15124.789196564616!2d77.10091357732396!3d18.39151566869035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc6b9d62d29e7c3%3A0x1d54d92e59266a40!2sChhatrapati%20Shivajiraje%20Mahavidyalaya%2C%20Udgir!5e0!3m2!1sen!2sin!4v1699902000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Copyright -->
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+            <p class="text-gray-400 text-sm">
+                &copy; <span id="currentYear"></span> 
+                <span data-en="Chh. Shivajiraje Mahavidyalaya, Udgir. All Rights Reserved." 
+                      data-mr="छ. शिवाजीराजे महाविद्यालय, उदगीर. सर्व हक्क राखीव.">Chh. Shivajiraje Mahavidyalaya, Udgir. All Rights Reserved.</span>
+            </p>
+            <p class="text-gray-500 text-xs mt-2">
+                <span data-en="Affiliated to SRTM University | NAAC A+ Accredited" 
+                      data-mr="SRTM विद्यापीठाशी संलग्न | NAAC A+ मान्यताप्राप्त">Affiliated to SRTM University | NAAC A+ Accredited</span>
+            </p>
+        </div>
+    </div>
+</footer>
+    <!-- ========================================
+         JAVASCRIPT
+         ======================================== -->
+    <script>
+        
+        // ========================================
+        // GLOBAL VARIABLES
+        // ========================================
+        let currentLanguage = 'en';
+        let slideInterval;
+
+        // ========================================
+        // DOM CONTENT LOADED
+        // ========================================
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year in footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+            // Initialize slideshow
+            initSlideshow();
+
+            // Initialize counter animation
+            initCounterAnimation();
+
+            // Initialize scroll animations
+            initScrollAnimations();
+
+            // Load saved language preference
+            const savedLang = localStorage.getItem('preferredLanguage');
+            if (savedLang) {
+                setLanguage(savedLang);
+            }
+        });
+
+        // ========================================
+        // NAVIGATION FUNCTIONS
+        // ========================================
+        function navigateTo(viewId) {
+            // Hide all views
+            document.querySelectorAll('.content-view').forEach(view => {
+                view.classList.add('hidden');
+            });
+
+            // Show target view
+            const targetView = document.getElementById(viewId);
+            if (targetView) {
+                targetView.classList.remove('hidden');
+                
+                // Scroll to top smoothly
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+
+                // Re-trigger animations for the new view
+                setTimeout(() => {
+                    initScrollAnimations();
+                }, 100);
+            }
+        }
+
+        function scrollToFooter() {
+            const footer = document.getElementById('contact-footer');
+            if (footer) {
+                footer.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // ========================================
+        // MOBILE MENU FUNCTIONS
+        // ========================================
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const iconOpen = document.getElementById('menu-icon-open');
+            const iconClose = document.getElementById('menu-icon-close');
+
+            menu.classList.toggle('hidden');
+            iconOpen.classList.toggle('hidden');
+            iconClose.classList.toggle('hidden');
+        }
+
+        // ========================================
+        // LANGUAGE FUNCTIONS
+        // ========================================
+        function toggleLanguage() {
+            const newLang = currentLanguage === 'en' ? 'mr' : 'en';
+            setLanguage(newLang);
+        }
+
+        function setLanguage(lang) {
+            currentLanguage = lang;
+            localStorage.setItem('preferredLanguage', lang);
+
+            // Update body class
+            document.body.classList.remove('lang-en', 'lang-mr');
+            document.body.classList.add('lang-' + lang);
+
+            // Update all translatable elements
+            document.querySelectorAll('[data-en][data-mr]').forEach(element => {
+                const text = element.getAttribute('data-' + lang);
+                if (text) {
+                    element.textContent = text;
+                }
+            });
+
+            // Update language toggle button text
+            const langBtnText = document.getElementById('langBtnText');
+            if (langBtnText) {
+                langBtnText.textContent = lang === 'en' ? 'मराठी' : 'English';
+            }
+
+            // Update desktop language selector
+            const langEnBtn = document.getElementById('langEnBtn');
+            const langMrBtn = document.getElementById('langMrBtn');
+            if (langEnBtn && langMrBtn) {
+                langEnBtn.classList.toggle('active', lang === 'en');
+                langMrBtn.classList.toggle('active', lang === 'mr');
+            }
+
+            // Update mobile language buttons
+            const mobileLangEn = document.getElementById('mobileLangEn');
+            const mobileLangMr = document.getElementById('mobileLangMr');
+            if (mobileLangEn && mobileLangMr) {
+                if (lang === 'en') {
+                    mobileLangEn.style.background = 'white';
+                    mobileLangEn.style.color = '#1a56db';
+                    mobileLangMr.style.background = 'rgba(255,255,255,0.2)';
+                    mobileLangMr.style.color = 'white';
+                } else {
+                    mobileLangMr.style.background = 'white';
+                    mobileLangMr.style.color = '#1a56db';
+                    mobileLangEn.style.background = 'rgba(255,255,255,0.2)';
+                    mobileLangEn.style.color = 'white';
+                }
+            }
+        }
+
+        // ========================================
+        // SLIDESHOW FUNCTIONS
+        // ========================================
+        function initSlideshow() {
+            const slides = document.querySelectorAll('.hero-slideshow .slide');
+            const indicators = document.querySelectorAll('.slide-indicators .indicator');
+            
+            if (slides.length === 0) return;
+
+            let currentSlide = 0;
+
+            function showSlide(index) {
+                // Remove active class from all slides and indicators
+                slides.forEach((slide, i) => {
+                    slide.classList.remove('active');
+                    if (indicators[i]) {
+                        indicators[i].classList.remove('active');
+                    }
+                });
+
+                // Add active class to current slide and indicator
+                slides[index].classList.add('active');
+                if (indicators[index]) {
+                    indicators[index].classList.add('active');
+                }
+
+                currentSlide = index;
+            }
+
+            function nextSlide() {
+                const next = (currentSlide + 1) % slides.length;
+                showSlide(next);
+            }
+
+            // Auto advance slides
+            slideInterval = setInterval(nextSlide, 5000);
+
+            // Click handlers for indicators
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', () => {
+                    clearInterval(slideInterval);
+                    showSlide(index);
+                    slideInterval = setInterval(nextSlide, 5000);
+                });
+            });
+
+            // Pause on hover
+            const slideshow = document.querySelector('.hero-slideshow');
+            if (slideshow) {
+                slideshow.addEventListener('mouseenter', () => {
+                    clearInterval(slideInterval);
+                });
+
+                slideshow.addEventListener('mouseleave', () => {
+                    slideInterval = setInterval(nextSlide, 5000);
+                });
+            }
+        }
+
+        // ========================================
+        // COUNTER ANIMATION
+        // ========================================
+        function initCounterAnimation() {
+            const counters = document.querySelectorAll('.counter');
+            let countersAnimated = false;
+
+            function animateCounters() {
+                if (countersAnimated) return;
+
+                counters.forEach(counter => {
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    if (isNaN(target)) return;
+
+                    const duration = 2000;
+                    const step = target / (duration / 16);
+                    let current = 0;
+
+                    const updateCounter = () => {
+                        current += step;
+                        if (current < target) {
+                            counter.textContent = Math.floor(current);
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            counter.textContent = target;
+                        }
+                    };
+
+                    updateCounter();
+                });
+
+                countersAnimated = true;
+            }
+
+            // Observe stats section
+            const statsSection = document.querySelector('.stats-section');
+            if (statsSection) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            animateCounters();
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.3 });
+
+                observer.observe(statsSection);
+            }
+        }
+
+        // ========================================
+        // SCROLL ANIMATIONS
+        // ========================================
+        function initScrollAnimations() {
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                    }
+                });
+            }, {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            });
+
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // ========================================
+        // PARALLAX EFFECT FOR HERO
+        // ========================================
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const heroContent = document.querySelector('.hero-content');
+            
+            if (heroContent && scrolled < window.innerHeight) {
+                heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
+                heroContent.style.opacity = 1 - (scrolled / 700);
+            }
+        });
+
+        // ========================================
+        // RIPPLE EFFECT FOR BUTTONS
+        // ========================================
+        document.querySelectorAll('.cta-btn, .hero-btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+
+                ripple.style.cssText = `
+                    position: absolute;
+                    width: ${size}px;
+                    height: ${size}px;
+                    left: ${x}px;
+                    top: ${y}px;
+                    background: rgba(255,255,255,0.3);
+                    border-radius: 50%;
+                    transform: scale(0);
+                    animation: rippleEffect 0.6s linear;
+                    pointer-events: none;
+                `;
+
+                this.style.position = 'relative';
+                this.style.overflow = 'hidden';
+                this.appendChild(ripple);
+
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+
+        // Add ripple animation keyframes
+        const rippleStyle = document.createElement('style');
+        rippleStyle.textContent = `
+            @keyframes rippleEffect {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(rippleStyle);
+
+        // ========================================
+        // CLOSE MOBILE MENU ON OUTSIDE CLICK
+        // ========================================
+        document.addEventListener('click', function(e) {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const hamburgerBtn = document.querySelector('.hamburger-btn');
+            
+            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                if (!mobileMenu.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+                    toggleMenu();
+                }
+            }
+        });
+
+        // ========================================
+        // KEYBOARD NAVIGATION
+        // ========================================
+        document.addEventListener('keydown', function(e) {
+            // Close mobile menu on Escape
+            if (e.key === 'Escape') {
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                    toggleMenu();
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
